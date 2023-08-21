@@ -16,7 +16,7 @@ const Products = (props) => {
       >
         -
       </button>
-      <span className="mx-2">
+      <span className="mx-1">
         {cartItems?.filter((row) => row.id === id)[0]?.count}
       </span>
       <button className="btn btn-info btn-sm" onClick={() => addToCart(id)}>
