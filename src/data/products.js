@@ -1,5 +1,5 @@
 import mobile from "../assets/images/mobile.png";
-import laptop from "../assets/images/laptop.png";
+import Pc from "../assets/images/Pc.png";
 import shoes from "../assets/images/shoes.png";
 import camera from "../assets/images/camera.png";
 import jeans from "../assets/images/jeans.png";
@@ -24,9 +24,9 @@ export const PRODUCTS = [
   },
   {
     id: 4,
-    productName: "Laptop",
+    productName: "Pc",
     price: 2000,
-    productImage: laptop,
+    productImage: Pc,
   },
   {
     id: 5,
