@@ -6,6 +6,10 @@ export const useCart = () => {
   useEffect(()=>{
     localStorage.getItem
   })
+  useEffect(()=>{
+    localStorage.setItem
+  })
+
 
   const addToCart = (itemId) => {
     if (!cartItems?.find((item) => item.id === itemId))
