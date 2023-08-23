@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 
 export const useCart = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState();
 
-  useEffect(()=>{
-    localStorage.getItem
-  })
-  useEffect(()=>{
-    localStorage.setItem
-  })
+  useEffect(() => {
+    const data = localStorage.getItem("sarvin_shop_cart_items");
+    setCartItems(!!JSON.parse(data) ? JSON.parse(data) : []);
+  }, []);
 
+  useEffect(() => {
+    if (cartItems !== undefined)
+      localStorage.setItem("sarvin_shop_cart_items", JSON.stringify(cartItems))
+  }, [cartItems]);
 
   const addToCart = (itemId) => {
     if (!cartItems?.find((item) => item.id === itemId))
