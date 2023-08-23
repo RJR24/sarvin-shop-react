@@ -10,7 +10,7 @@ const Cart = () => {
       <h1>Selected Items In Your Cart</h1>
       <div className="row">
         {PRODUCTS.map((p) => {
-          if (cartItems.some((i) => i.id === p.id && i.count > 0))
+          if (cartItems?.some((i) => i.id === p.id && i.count > 0))
             return <Products data={p}></Products>;
         })}
       </div>
