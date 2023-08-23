@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Products from "./Products";
+import Products from "./products";
 import { PRODUCTS } from "../../data/products";
 const Shop = () => {
   return (
