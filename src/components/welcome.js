@@ -1,10 +1,15 @@
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 const Welcome = () => {
-  const [displayWelcome, setDisplayWelcome] = useState(true);
+  const [displayWelcome, setDisplayWelcome] = useState();
+  useEffect(() => {
+    const data = localStorage.getItem("app_intro_msg");
+    setDisplayWelcome(() => JSON.parse(data) ?? true);
+  }, []);
   const handleWelcome = () => {
-    setDisplayWelcome(!displayWelcome);
+    setDisplayWelcome(false);
+    localStorage.setItem("app_intro_msg", JSON.stringify(false));
   };
   return (
     <React.Fragment>
@@ -19,7 +24,7 @@ const Welcome = () => {
             <div className="p-4">Welcome!</div>
           </div>
         </div>
-      )}  
+      )}
     </React.Fragment>
   );
 };
