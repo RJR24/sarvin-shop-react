@@ -10,7 +10,7 @@ export const useCart = () => {
 
   useEffect(() => {
     if (cartItems !== undefined)
-      localStorage.setItem("sarvin_shop_cart_items", JSON.stringify(cartItems))
+      localStorage.setItem("sarvin_shop_cart_items", JSON.stringify(cartItems));
   }, [cartItems]);
 
   const addToCart = (itemId) => {
@@ -35,5 +35,9 @@ export const useCart = () => {
       })
     );
   };
-  return { cartItems, removeFromCart, addToCart };
+  const clearShoppingCart = () => {
+    setCartItems();
+    localStorage.removeItem("sarvin_shop_cart_items");
+  };
+  return { cartItems, removeFromCart, addToCart, clearShoppingCart };
 };
