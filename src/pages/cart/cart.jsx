@@ -4,7 +4,7 @@ import { ShopContext } from "../../context/shopContext";
 import Products from "../shop/products";
 
 const Cart = () => {
-  const { cartItems } = useContext(ShopContext);
+  const { cartItems, clearShoppingCart } = useContext(ShopContext);
   return (
     <React.Fragment>
       <h1>Selected Items In Your Cart</h1>
@@ -14,6 +14,7 @@ const Cart = () => {
             return <Products data={p}></Products>;
         })}
       </div>
+      <button className="btn btn-warning m-3" onClick={clearShoppingCart}>Clear</button>
     </React.Fragment>
   );
 };
