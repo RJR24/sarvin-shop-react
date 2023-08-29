@@ -23,7 +23,6 @@ export const useCart = () => {
           else return item;
         })
       );
-    console.log(cartItems);
   };
 
   const removeFromCart = (itemId) => {
