@@ -4,13 +4,13 @@ export const useCart = () => {
   const [cartItems, setCartItems] = useState();
 
   useEffect(() => {
-    const data = localStorage.getItem("sarvin_shop_cart_items");
+    const data = localStorage.getItem("Sarvin_shop_cart_items");
     setCartItems(!!JSON.parse(data) ? JSON.parse(data) : []);
   }, []);
 
   useEffect(() => {
     if (cartItems !== undefined)
-      localStorage.setItem("sarvin_shop_cart_items", JSON.stringify(cartItems));
+      localStorage.setItem("Sarvin_shop_cart_items", JSON.stringify(cartItems));
   }, [cartItems]);
 
   const addToCart = (itemId) => {
@@ -31,12 +31,12 @@ export const useCart = () => {
         if (item.id === itemId)
           return { ...item, count: item.count === 0 ? 0 : item.count - 1 };
         else return item;
-      })
+      }) 
     );
   };
   const clearShoppingCart = () => {
     setCartItems();
-    localStorage.removeItem("sarvin_shop_cart_items");
+    localStorage.removeItem("Sarvin_shop_cart_items");
   };
   return { cartItems, removeFromCart, addToCart, clearShoppingCart };
 };
