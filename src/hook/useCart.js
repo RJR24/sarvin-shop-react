@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useCart = () => {
-  const [cartItems, setCartItems] = useState();
+  const [cartItems, setCartItems] = useState(); 
 
   useEffect(() => {
     const data = localStorage.getItem("Sarvin_shop_cart_items");
