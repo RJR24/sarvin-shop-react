@@ -1,8 +1,8 @@
-import mobile from "../assets/images/mobile.png";
-import Pc from "../assets/images/Pc.png";
-import shoes from "../assets/images/shoes.png";
-import camera from "../assets/images/camera.png";
-import jeans from "../assets/images/jeans.png";
+import mobile from "../assets/images/products/mobile.png";
+import Pc from "../assets/images/products/Pc.png";
+import shoes from "../assets/images/products/shoes.png";
+import camera from "../assets/images/products/camera.png";
+import jeans from "../assets/images/products/jeans.png";
 export const PRODUCTS = [
   {
     id: 1,
