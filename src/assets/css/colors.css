@@ -1,0 +1,12 @@
+:root {
+  --black: #0c0c0c;
+  --white: #fff;
+  --blue: #0c68f4;
+}
+
+.text-black {
+  color: var(--black);
+}
+.blue-hover-color:hover {
+  color: var(--blue)!important;
+}
