@@ -1,23 +1,20 @@
-import "./App.css";
+import "./assets/css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Shop from "./pages/shop/shop";
-import Cart from "./pages/cart/cart";
+import { BrowserRouter as Router} from "react-router-dom";
 import Nav from "./components/nav";
 import { ShopContextProvider } from "./context/shopContext";
 import Welcome from "./components/welcome";
+import RoutesMap from "./routes";
+import Header from "./components/layouts/Header";
 
 function App() {
   return (
     <div className="App">
       <ShopContextProvider>
         <Router>
-          <Nav />
+          <Header />
           <Welcome />
-          <Routes>
-            <Route path="/" element={<Shop />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
+         <RoutesMap/>
         </Router>
       </ShopContextProvider>
     </div>
@@ -25,3 +22,6 @@ function App() {
 }
 
 export default App;
+
+
+// sass , tailwind, typescript, redux
