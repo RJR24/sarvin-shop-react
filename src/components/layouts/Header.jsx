@@ -5,6 +5,12 @@ import search from "../../assets/images/icons/search.svg";
 import user from "../../assets/images/icons/user.svg";
 import basket from "../../assets/images/icons/basket.svg";
 
+import profile from "../../assets/images/icons/profile-circle.svg"
+import orders from "../../assets/images/icons/orders.svg"
+import wishList from "../../assets/images/icons/wishList.svg"
+import payments from "../../assets/images/icons/payments.svg"
+import logout from "../../assets/images/icons/logout.svg"
+
 const Header = () => {
   return (
     <header className=" py-3 ">
@@ -24,7 +30,7 @@ const Header = () => {
               Products
             </Link>
             <div className="sub-menu">
-              
+
             </div>
           </div>
           <Link to="/blog" className="nav-link text-black blue-hover-color">
@@ -47,13 +53,36 @@ const Header = () => {
           <Link to="" className="pe-3">
             <img src={basket} alt="" />
           </Link>
-          <Link to="">
-            <img src={user} alt="" />
-          </Link>
+
+          <div className="menu-trigger d-inline">
+            <Link to="">
+              <img src={user} alt="" />
+            </Link>
+          </div>
+          <div className="dropdown-menu">
+            <h3>s</h3>
+            <ul>
+            <DropdownItem img = {profile} text = {"My Profile"} />
+            <DropdownItem img = {orders} text = {""} />
+            <DropdownItem img = {profile} text = {"My Profile"} />
+            <DropdownItem img = {profile} text = {"My Profile"} />
+            <DropdownItem img = {profile} text = {"My Profile"} />
+            </ul>
+          </div>
+
         </div>
       </div>
     </header>
   );
 };
+
+function DropdownItem(props){
+  return(
+    <li className="dropdownItem">
+      <img src={props.img} alt="" />
+      <a href="#" >{props.text}</a>
+    </li>
+  );
+}
 
 export default Header;
