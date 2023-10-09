@@ -1,17 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./header.css";
 import logo from "../../assets/images/icons/logo.svg";
 import search from "../../assets/images/icons/search.svg";
 import user from "../../assets/images/icons/user.svg";
 import basket from "../../assets/images/icons/basket.svg";
 
-import profile from "../../assets/images/icons/profile-circle.svg"
-import orders from "../../assets/images/icons/orders.svg"
-import wishList from "../../assets/images/icons/wishList.svg"
-import payments from "../../assets/images/icons/payments.svg"
-import logout from "../../assets/images/icons/logout.svg"
+import profile from "../../assets/images/icons/profile-circle.svg";
+import orders from "../../assets/images/icons/orders.svg";
+import wishList from "../../assets/images/icons/wishList.svg";
+import payments from "../../assets/images/icons/payments.svg";
+import logout from "../../assets/images/icons/logout.svg";
+import { useState } from "react";
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
   return (
     <header className=" py-3 ">
       <div className="container d-flex justify-content-between">
@@ -29,9 +32,7 @@ const Header = () => {
             >
               Products
             </Link>
-            <div className="sub-menu">
-
-            </div>
+            <div className="sub-menu"></div>
           </div>
           <Link to="/blog" className="nav-link text-black blue-hover-color">
             Blog
@@ -54,33 +55,41 @@ const Header = () => {
             <img src={basket} alt="" />
           </Link>
 
-          <div className="menu-trigger d-inline">
+          <div
+            className={`menu-trigger ${open ? "active" : "inactive"} d-inline`}
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
             <Link to="">
               <img src={user} alt="" />
             </Link>
+            <div className="dropdown-menu">
+              <h3>
+                name
+                <br />
+                <span>User@gmail.com</span>
+              </h3>
+              <ul>
+                <DropdownItem img={profile} text={"My Profile"} />
+                <DropdownItem img={orders} text={"Orders"} />
+                <DropdownItem img={wishList} text={"Wish List"} />
+                <DropdownItem img={payments} text={"Payments"} />
+                <DropdownItem img={logout} text={"Log Out"} />
+              </ul>
+            </div>
           </div>
-          <div className="dropdown-menu">
-            <h3>s</h3>
-            <ul>
-            <DropdownItem img = {profile} text = {"My Profile"} />
-            <DropdownItem img = {orders} text = {""} />
-            <DropdownItem img = {profile} text = {"My Profile"} />
-            <DropdownItem img = {profile} text = {"My Profile"} />
-            <DropdownItem img = {profile} text = {"My Profile"} />
-            </ul>
-          </div>
-
         </div>
       </div>
     </header>
   );
 };
 
-function DropdownItem(props){
-  return(
+function DropdownItem(props) {
+  return (
     <li className="dropdownItem">
       <img src={props.img} alt="" />
-      <a href="#" >{props.text}</a>
+      <a href="#">{props.text}</a>
     </li>
   );
 }
