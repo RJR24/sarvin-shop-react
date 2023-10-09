@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { PRODUCTS } from "../../data/products";
 import { ShopContext } from "../../context/shopContext";
-import Products from "../shop/products";
+import Product from "../shop/product";
 
 const Cart = () => {
   const { cartItems, clearShoppingCart } = useContext(ShopContext);
@@ -11,10 +11,12 @@ const Cart = () => {
       <div className="row">
         {PRODUCTS.map((p) => {
           if (cartItems?.some((i) => i.id === p.id && i.count > 0))
-            return <Products data={p}></Products>;
+            return <Product data={p} />;
         })}
       </div>
-      <button className="btn btn-warning m-3" onClick={clearShoppingCart}>Clear</button>
+      <button className="btn btn-warning m-3" onClick={clearShoppingCart}>
+        Clear
+      </button>
     </React.Fragment>
   );
 };

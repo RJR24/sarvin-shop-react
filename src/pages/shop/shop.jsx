@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Products from "./products";
+import Product from "./product";
 import { PRODUCTS } from "../../data/products";
 const Shop = () => {
   return (
@@ -7,7 +7,7 @@ const Shop = () => {
       <h1>Shop!</h1>
       <div className="row">
         {PRODUCTS.map((productData) => (
-          <Products key={productData.id} data={productData} />
+          <Product key={productData.id} data={productData} />
         ))}
       </div>
     </Fragment>
