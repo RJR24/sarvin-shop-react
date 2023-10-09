@@ -5,6 +5,7 @@
   --primary: #0c68f4;
   --success: #146c43;
   --err: #c91433;
+  --sidebar-gray: #f9f9f9;
 }
 
 .text-black {
@@ -21,4 +22,7 @@
 }
 .err {
   color: var(--err);
+}
+.sidebar-gray {
+  color: var(--sidebar-gray)
 }
