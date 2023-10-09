@@ -2,11 +2,23 @@
   --black: #0c0c0c;
   --white: #fff;
   --blue: #0c68f4;
+  --primary: #0c68f4;
+  --success: #146c43;
+  --err: #c91433;
 }
 
 .text-black {
   color: var(--black);
 }
 .blue-hover-color:hover {
-  color: var(--blue)!important;
+  color: var(--blue) !important;
+}
+.button-primary {
+  color: var(--primary);
+}
+.success {
+  color: var(--success);
+}
+.err {
+  color: var(--err);
 }
