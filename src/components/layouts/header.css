@@ -26,13 +26,13 @@ h3 {
   padding: 20px 0;
   font-size: 18px;
   font-weight: 500;
-  color: #0000;
+  color: #000;
   line-height: 1.2rem;
 }
 h3 span {
   font-size: 14px;
   font-weight: 400;
-  color: #0000;
+  color: #000;
 }
 .dropdown-menu ul li {
   padding: 10px 0;
@@ -42,16 +42,24 @@ h3 span {
   opacity: 1;
   cursor: pointer;
 }
-.DropdownItem {
+.dropdownItem {
   display: flex;
   margin: 10px auto;
 }
-.DropdownItem img {
+.dropdownItem img {
   max-width: 20px;
   margin-right: 10px;
   opacity: 0.5;
   /* transition: ; */
 }
-.DropdownItem a {
-
+.dropdownItem a {
+  max-width: 100%;
+  margin-left: 10px;
+  transition: 300ms;
+}
+.active .dropdown-menu{
+  display: block;
+}
+.inactive .dropdown-menu{
+  display: none;
 }
