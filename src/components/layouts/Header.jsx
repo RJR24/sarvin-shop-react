@@ -56,7 +56,7 @@ const Header = () => {
           </Link>
 
           <div
-            className={`menu-trigger ${open ? "active" : "inactive"} d-inline`}
+            className={`menu-trigger  d-inline ${open ? "active" : "inactive"}`}
             onClick={() => {
               setOpen(!open);
             }}
@@ -70,7 +70,7 @@ const Header = () => {
                 <br />
                 <span>User@gmail.com</span>
               </h3>
-              <ul>
+              <ul className="list-unstyled">
                 <DropdownItem img={profile} text={"My Profile"} />
                 <DropdownItem img={orders} text={"Orders"} />
                 <DropdownItem img={wishList} text={"Wish List"} />
