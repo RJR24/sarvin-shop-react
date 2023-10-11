@@ -6,6 +6,7 @@ import camera from "../../assets/images/pro02/camera.png";
 import accessories from "../../assets/images/pro02/accessories.png";
 import gaming from "../../assets/images/pro02/gaming.png";
 import laptop from "../../assets/images/pro02/laptop.png";
+
 import CategoryCard from "./CategoryCard";
 
 import "./category.css";
