@@ -9,8 +9,8 @@ import airPodPro2 from "../../assets/images/pro02/airpodPro2.png";
 
 import arrowCircleRight from "../../assets/images/arrows-btn-etc/arrow-circle-right.svg";
 
-const OurBlogList = [
-  {
+const OurBlogList = {
+  blog1: {
     data: {
       publishDate: 1,
       title: "Blog Title Here!",
@@ -18,7 +18,7 @@ const OurBlogList = [
     },
     image: PS4,
   },
-  {
+  blog2: {
     data: {
       publishDate: 2,
       title: "Blog Title Here!",
@@ -26,15 +26,15 @@ const OurBlogList = [
     },
     image: headSet,
   },
-  {
+  blog3: {
     data: {
+      publishDate: 3,
       title: "Blog Title Here!",
       blogSummary: "blog summary here",
-      publishDate: 3,
     },
     image: mcBookAir15,
   },
-];
+};
 const NewBlogs = () => {
   return (
     <div className="mainBlogContainer">
@@ -50,6 +50,19 @@ const NewBlogs = () => {
           {OurBlogList.find((item) => item.data.publishDate === 1) && (
             <OurBlogCard
               data={
+                OurBlogList.find((item) => item.data.publishDate === 2).data
+              }
+              image={
+                OurBlogList.find((item) => item.data.publishDate === 3).image
+              }
+            />
+          )}
+        </div>
+
+        <div className="newBlogCard2">
+          {OurBlogList.find((item) => item.data.publishDate === 2) && (
+            <OurBlogCard
+              data={
                 OurBlogList.find((item) => item.data.publishDate === 1).data
               }
               image={
@@ -59,19 +72,18 @@ const NewBlogs = () => {
           )}
         </div>
 
-        <div className="newBlogCard2">
-  {OurBlogList.find(item => item.data.publishDate === 2) && (
-    <OurBlogCard data={OurBlogList.find(item => item.data.publishDate === 1).data} image={OurBlogList.find(item => item.data.publishDate === 1).image} />
-  )}
-</div>
-
-
-<div className="newBlogCard3">
-  {OurBlogList.find(item => item.data.publishDate === 3) && (
-    <OurBlogCard data={OurBlogList.find(item => item.data.publishDate === 1).data} image={OurBlogList.find(item => item.data.publishDate === 1).image} />
-  )}
-</div>
-
+        <div className="newBlogCard3">
+          {OurBlogList.find((item) => item.data.publishDate === 3) && (
+            <OurBlogCard
+              data={
+                OurBlogList.find((item) => item.data.publishDate === 1).data
+              }
+              image={
+                OurBlogList.find((item) => item.data.publishDate === 1).image
+              }
+            />
+          )}
+        </div>
       </div>
     </div>
   );
