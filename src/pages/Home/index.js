@@ -8,6 +8,7 @@ import banner from "../../assets/Frame 26086920.png"
 import TopBrands from "../../components/TopBrands/TopBrands";
 import SmartWatch from "../../components/smartWatchBanner/SmartWatchBanner.jsx";
 import NewBlogs from "../../components/OurBlogSecttion/OurBlog";
+import OurServices from "../../components/Services/OurServices";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <TopBrands />
       <SmartWatch />
       <NewBlogs />
+      <OurServices />
       <br />
       <br />
       <br />
