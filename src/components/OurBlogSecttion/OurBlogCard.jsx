@@ -1,17 +1,17 @@
 import React from "react";
 import "./OurBlogStyles.css";
 
-const OurBlogCardCard = ({ data, image }) => {
+const OurBlogCard = ({ data, image }) => {
   return (
     <div className="">
-      <div>
-        <img src={image} alt="" width="100px" />
+      <div >
+        <img src={image} id="blogCardImage" alt={data.title} />
       </div>
-      <div>{data.publishDate}</div>
+      <div className="blogCardDate">{data.publishDate}</div>
       <div className="newBlogTitle">{data.title}</div>
       <div className="blogSummary">{data.blogSummary}</div>
     </div>
   );
 };
 
-export default OurBlogCardCard;
+export default OurBlogCard;
