@@ -2,10 +2,9 @@ import React from "react";
 import OurBlogCard from "./OurBlogCard";
 import "./OurBlogStyles.css";
 
-import headSet from "../../assets/images/pro02/headSet.png";
-import PS4 from "../../assets/images/pro02/playStation4.png";
-import mcBookAir15 from "../../assets/images/pro02/mcBookAir15.png";
-import airPodPro2 from "../../assets/images/pro02/airpodPro2.png";
+import headSet from "../../assets/images/blogImages/headSet.svg";
+import Meta from "../../assets/images/blogImages/Meta.png";
+import crypto from "../../assets/images/blogImages/crypto.png";
 
 import arrowCircleRight from "../../assets/images/arrows-btn-etc/arrow-circle-right.svg";
 
@@ -13,28 +12,29 @@ const OurBlogList = {
   blog1: {
     data: {
       publishDate: 1,
-      title: "Blog Title Here!",
-      blogSummary: "blog summary here",
+      title: "Blog Title Here 1",
+      blogSummary: "Blog summary here 1",
     },
-    image: PS4,
+    image: Meta,
   },
   blog2: {
     data: {
       publishDate: 2,
-      title: "Blog Title Here!",
-      blogSummary: "blog summary here",
+      title: "Blog Title Here 2",
+      blogSummary: "Blog summary here 2",
     },
     image: headSet,
   },
   blog3: {
     data: {
       publishDate: 3,
-      title: "Blog Title Here!",
-      blogSummary: "blog summary here",
+      title: "Blog Title Here 3",
+      blogSummary: "Blog summary here 3",
     },
-    image: mcBookAir15,
+    image: crypto,
   },
 };
+
 const NewBlogs = () => {
   return (
     <div className="mainBlogContainer">
@@ -47,42 +47,31 @@ const NewBlogs = () => {
 
       <div className="blogCardContainer">
         <div className="newBlogCard1">
-          {OurBlogList.find((item) => item.data.publishDate === 1) && (
+          {OurBlogList.blog1 && (
             <OurBlogCard
-              data={
-                OurBlogList.find((item) => item.data.publishDate === 2).data
-              }
-              image={
-                OurBlogList.find((item) => item.data.publishDate === 3).image
-              }
+              data={OurBlogList.blog1.data}
+              image={OurBlogList.blog1.image}
             />
           )}
         </div>
+        <div className="rightCardsContainer">
+          <div className="newBlogCard2">
+            {OurBlogList.blog2 && (
+              <OurBlogCard
+                data={OurBlogList.blog2.data}
+                image={OurBlogList.blog2.image}
+              />
+            )}
+          </div>
 
-        <div className="newBlogCard2">
-          {OurBlogList.find((item) => item.data.publishDate === 2) && (
-            <OurBlogCard
-              data={
-                OurBlogList.find((item) => item.data.publishDate === 1).data
-              }
-              image={
-                OurBlogList.find((item) => item.data.publishDate === 1).image
-              }
-            />
-          )}
-        </div>
-
-        <div className="newBlogCard3">
-          {OurBlogList.find((item) => item.data.publishDate === 3) && (
-            <OurBlogCard
-              data={
-                OurBlogList.find((item) => item.data.publishDate === 1).data
-              }
-              image={
-                OurBlogList.find((item) => item.data.publishDate === 1).image
-              }
-            />
-          )}
+          <div className="newBlogCard3">
+            {OurBlogList.blog3 && (
+              <OurBlogCard
+                data={OurBlogList.blog3.data}
+                image={OurBlogList.blog3.image}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>
