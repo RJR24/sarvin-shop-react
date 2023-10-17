@@ -8,12 +8,12 @@ const NewProductsCard = ({ data, image }) => {
         <img src={image} alt="" width="100px" />
       </div>
 
-      <div className="info">
+      <div className="info-section">
         <div>{data.specification}</div>
 
         <div className="price-rate">
           <div>{data.price}</div>
-          <div id="rate">
+          <div id="rate-sign">
             <div>
               <img src={star} alt="star sign" />
             </div>
