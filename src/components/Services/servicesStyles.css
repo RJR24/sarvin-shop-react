@@ -1,0 +1,30 @@
+.p {
+  margin-left: 16px;
+  margin-top: 20px; 
+  display: flex;
+  color: var(--Black, #0c0c0c);
+
+  /* Web/Body-xl */
+  /* font-family: Inter; */
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  justify-content: center;
+  align-items: center;
+}
+.servicesContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.services {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* align-items: flex-start; */
+}
+.img {
+  display: flex;
+  align-items: center;
+}
