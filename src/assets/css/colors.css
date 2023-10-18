@@ -6,6 +6,9 @@
   --success: #146c43;
   --err: #c91433;
   --sidebar-gray: #f9f9f9;
+  --primary-primary-900: #021736;
+  --neutral-gray: #cbcbcb;
+  --Secondary: #f45e0c;
 }
 
 .text-black {
@@ -17,6 +20,9 @@
 .button-primary {
   color: var(--primary);
 }
+.button-secondary {
+  color: var(--Secondary);
+}
 .success {
   color: var(--success);
 }
@@ -24,5 +30,11 @@
   color: var(--err);
 }
 .sidebar-gray {
-  color: var(--sidebar-gray)
+  color: var(--sidebar-gray);
+}
+.primary-900 {
+  color: var(--success);
+}
+.neutral-gray {
+  color: var(--neutral-gray);
 }
