@@ -1,14 +1,15 @@
 import React from "react";
-import OurBlogCard from "./OurBlogCard";
+import OurBlogCard
+ from "./OurBlogCard";
 import "./OurBlogStyles.css";
 
-import headSet from "../../assets/images/blogImages/headSet.svg";
 import Meta from "../../assets/images/blogImages/Meta.png";
+import headSet from "../../assets/images/blogImages/headSet.svg";
 import crypto from "../../assets/images/blogImages/crypto.png";
 
 import arrowCircleRight from "../../assets/images/arrows-btn-etc/arrow-circle-right.svg";
 
-const OurBlogList = {
+const OurBlogList =  {
   blog1: {
     data: {
       publishDate: 1,
@@ -64,7 +65,7 @@ const NewBlogs = () => {
             )}
           </div>
 
-          <div className="newBlogCard3">
+          <div className="newBlogCard2">
             {OurBlogList.blog3 && (
               <OurBlogCard
                 data={OurBlogList.blog3.data}
