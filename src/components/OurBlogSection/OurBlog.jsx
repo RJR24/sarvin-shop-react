@@ -1,6 +1,5 @@
 import React from "react";
-import OurBlogCard
- from "./OurBlogCard";
+import OurBlogCard from "./OurBlogCard";
 import "./OurBlogStyles.css";
 
 import Meta from "../../assets/images/blogImages/Meta.png";
@@ -9,7 +8,7 @@ import crypto from "../../assets/images/blogImages/crypto.png";
 
 import arrowCircleRight from "../../assets/images/arrows-btn-etc/arrow-circle-right.svg";
 
-const OurBlogList =  {
+const OurBlogList = {
   blog1: {
     data: {
       publishDate: 1,
@@ -39,40 +38,37 @@ const OurBlogList =  {
 const NewBlogs = () => {
   return (
     <div className="mainBlogContainer">
-      <div className="blogTitle">
+      <div className="d-flex justify-content-between mt-5 mb-5 our-blog-title">
         <div className="BSTitleText">Our Blog</div>
         <button className="btn ">
           View all <img src={arrowCircleRight} alt="right arrow" />
         </button>
       </div>
-
-      <div className="blogCardContainer">
-        <div className="newBlogCard1">
+      <div className="row blog-card-list">
+        <div className="col-12 col-md-4">
           {OurBlogList.blog1 && (
             <OurBlogCard
               data={OurBlogList.blog1.data}
               image={OurBlogList.blog1.image}
+              dir="vertical"
             />
           )}
         </div>
-        <div className="rightCardsContainer">
-          <div className="newBlogCard2">
-            {OurBlogList.blog2 && (
-              <OurBlogCard
-                data={OurBlogList.blog2.data}
-                image={OurBlogList.blog2.image}
-              />
-            )}
-          </div>
-
-          <div className="newBlogCard2">
-            {OurBlogList.blog3 && (
-              <OurBlogCard
-                data={OurBlogList.blog3.data}
-                image={OurBlogList.blog3.image}
-              />
-            )}
-          </div>
+        <div className="col-12 col-md-8">
+          {OurBlogList.blog2 && (
+            <OurBlogCard
+              data={OurBlogList.blog2.data}
+              image={OurBlogList.blog2.image}
+              dir="horizontal"
+            />
+          )}
+          {OurBlogList.blog3 && (
+            <OurBlogCard
+              data={OurBlogList.blog3.data}
+              image={OurBlogList.blog3.image}
+              dir="horizontal"
+            />
+          )}
         </div>
       </div>
     </div>
