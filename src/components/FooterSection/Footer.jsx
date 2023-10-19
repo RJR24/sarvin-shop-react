@@ -11,12 +11,15 @@ import visaCard from "../../assets/images/icons/Visa.svg";
 import payPal from "../../assets/images/icons/payPal.svg";
 import amex from "../../assets/images/icons/Amex.svg";
 import copyRight from "../../assets/images/icons/copy-right.svg";
+import location from "../../assets/images/icons/location.svg";
+import HeimSupport from "../../assets/images/icons/techHeimSupport.svg";
+import phone from "../../assets/images/icons/phone.svg";
 
 const Footer = () => {
   return (
     <Fragment>
       <div className="footer-container">
-        <div className="footer-info">
+        <div class=" footer-info d-flex justify-content-around">
           <div className="footer-section1">
             <div className="c-title">Company</div>
             <p>about us</p>
@@ -32,14 +35,38 @@ const Footer = () => {
           </div>
           <div className="footer-section3">
             <div className="c-title">Contact us</div>
-            <p>123 Main Street, Anytown,USA</p>
-            <p>+1 (555) 123-4567</p>
-            <p>TechHeimSupport@gmail.com</p>
+            <div className="d-flex align-items-center sec3-items">
+              <div>
+                <img src={location} alt="location" />
+              </div>
+              <div>
+                <p>123 Main Street, Anytown,USA</p>
+              </div>
+            </div>
+            <div className="d-flex align-items-center sec3-items">
+              <div>
+                <img src={phone} alt="phone" />
+              </div>
+              <div>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div className="d-flex align-items-center sec3-items">
+              <div>
+                <img src={HeimSupport} alt="support" />
+              </div>
+              <div>
+                <p>TechHeimSupport@gmail.com</p>
+              </div>
+            </div>
           </div>
-          <div className="footer-section4">
+          <div className="footer-section4 ">
             <div className="c-title">Sign up for News and updates</div>
-            <input type="text" placeholder="E-mail Address" />
-            <div className="social-media">
+            <div>
+              <input type="text" placeholder="E-mail Address"  />
+              
+            </div>
+            <div className="social-media d-flex ">
               <img src={facebookIcon} alt="facebook icon" />
               <img src={twitterIcon} alt="twitter icon" />
               <img src={instagramIcon} alt="instagram icon" />
@@ -54,14 +81,14 @@ const Footer = () => {
           <img src={masterCard} alt="master card sign" />
         </div>
       </div>
-      <div className="policy">
-        <div>
+      <div className=" d-flex justify-content-between policy">
+        <div className="d-flex col-2">
           <p>
             {" "}
             <img src={copyRight} alt="" /> 2023 Tech Heim.{" "}
           </p>
         </div>
-        <div className="right-side">
+        <div className="right-side d-flex ">
           <p>cookie settings</p>
           <p>Privacy Policy</p>
           <p>Terms and Conditions </p>
