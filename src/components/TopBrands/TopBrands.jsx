@@ -14,22 +14,22 @@ const TopBrands = () => {
       <div className="brandsTitle">Top Brands</div>
       <div id="brandsName">
         <div>
-          <img src={Apple} alt="logo" />
+          <img src={Apple} alt="Apple logo" />
         </div>
         <div>
-          <img src={Sony} alt="logo" />
+          <img src={Sony} alt="Sony logo" />
         </div>
         <div>
-          <img src={Samsung} alt="logo" />
+          <img src={Samsung} alt="Samsung logo" />
         </div>
         <div>
-          <img src={Canon} alt="logo" />
+          <img src={Canon} alt="Canon logo" />
         </div>
         <div>
-          <img src={huawei} alt="logo" />
+          <img src={huawei} alt="huawei logo" />
         </div>
         <div>
-          <img src={Lenovo} alt="logo" />
+          <img src={Lenovo} alt="Lenovo logo" />
         </div>
       </div>
     </div>
