@@ -1,5 +1,19 @@
-/* .image,
-.specifications,
-.price {
-  height: 500px;
+.pro-name {
+  /* font-family: Inter; */
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.p-rate {
+  width: 48px;
+  background-color: #063a88;
+  border-radius: 4px;
+  width: 43px;
+  padding: 3px 7px;
+  color: #ffff;
+}
+
+/* .rate-color {
+  margin-top: 24px;
 } */
