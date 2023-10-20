@@ -22,16 +22,16 @@ const Footer = () => {
         <div class=" footer-info d-flex justify-content-around">
           <div className="footer-section1">
             <div className="c-title">Company</div>
-            <p>about us</p>
-            <p>blog</p>
-            <p>returns</p>
-            <p>order status</p>
+            <span>about us</span>
+            <span>blog</span>
+            <span>returns</span>
+            <span>order status</span>
           </div>
           <div className="footer-section2">
             <div className="c-title">Info</div>
-            <p>How it works?</p>
-            <p>our promises</p>
-            <p>FAQ</p>
+            <span>How it works?</span>
+            <span>our promises</span>
+            <span>FAQ</span>
           </div>
           <div className="footer-section3">
             <div className="c-title">Contact us</div>
@@ -40,7 +40,7 @@ const Footer = () => {
                 <img src={location} alt="location" />
               </div>
               <div>
-                <p>123 Main Street, Anytown,USA</p>
+                <span>123 Main Street, Anytown,USA</span>
               </div>
             </div>
             <div className="d-flex align-items-center sec3-items">
@@ -48,7 +48,7 @@ const Footer = () => {
                 <img src={phone} alt="phone" />
               </div>
               <div>
-                <p>+1 (555) 123-4567</p>
+                <span>+1 (555) 123-4567</span>
               </div>
             </div>
             <div className="d-flex align-items-center sec3-items">
@@ -56,7 +56,7 @@ const Footer = () => {
                 <img src={HeimSupport} alt="support" />
               </div>
               <div>
-                <p>TechHeimSupport@gmail.com</p>
+                <span>TechHeimSupport@gmail.com</span>
               </div>
             </div>
           </div>
@@ -83,16 +83,16 @@ const Footer = () => {
       </div>
       <div className=" d-flex justify-content-between policy">
         <div className="d-flex col-2">
-          <p>
+          <span>
             {" "}
             <img src={copyRight} alt="" /> 2023 Tech Heim.{" "}
-          </p>
+          </span>
         </div>
         <div className="right-side d-flex ">
-          <p>cookie settings</p>
-          <p>Privacy Policy</p>
-          <p>Terms and Conditions </p>
-          <p>Imprint</p>
+          <span>cookie settings</span>
+          <span>Privacy Policy</span>
+          <span>Terms and Conditions </span>
+          <span>Imprint</span>
         </div>
       </div>
     </Fragment>
