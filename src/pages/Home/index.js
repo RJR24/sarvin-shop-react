@@ -10,7 +10,6 @@ import TopBrands from "../../components/TopBrands/TopBrands";
 import SmartWatch from "../../components/smartWatchBanner/SmartWatchBanner.jsx";
 import NewBlogs from "../../components/OurBlogSection/OurBlog";
 import OurServices from "../../components/Services/OurServices";
-import Footer from "../../components/FooterSection/Footer";
 import Hero from "../../components/HeroSection/Hero";
 
 const Home = () => {
@@ -28,12 +27,6 @@ const Home = () => {
       <SmartWatch />
       <NewBlogs />
       <OurServices />
-      <Footer />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   );
 };
