@@ -12,9 +12,11 @@ import wishList from "../../assets/images/icons/wishList.svg";
 import payments from "../../assets/images/icons/payments.svg";
 import logout from "../../assets/images/icons/logout.svg";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const username= useSelector((state)=>state.userReducer.username)
   return (
     <header className=" py-3 ">
       <div className="container d-flex justify-content-between">
@@ -64,19 +66,29 @@ const Header = () => {
             <Link to="">
               <img src={user} alt="" />
             </Link>
+
             <div className="dropdown-menu">
-              <h3>
-                name
-                <br />
-                <span>User@gmail.com</span>
-              </h3>
-              <ul className="list-unstyled">
-                <DropdownItem img={profile} text={"My Profile"} />
-                <DropdownItem img={orders} text={"Orders"} />
-                <DropdownItem img={wishList} text={"Wish List"} />
-                <DropdownItem img={payments} text={"Payments"} />
-                <DropdownItem img={logout} text={"Log Out"} />
-              </ul>
+              {username ? (
+                <div>
+                  <h3>
+                    {username}
+                    <br />
+                    <span>User@gmail.com</span>
+                  </h3>
+                  <ul className="list-unstyled">
+                    <DropdownItem img={profile} text={"My Profile"} />
+                    <DropdownItem img={orders} text={"Orders"} />
+                    <DropdownItem img={wishList} text={"Wish List"} />
+                    <DropdownItem img={payments} text={"Payments"} />
+                    <DropdownItem img={logout} text={"Log Out"} />
+                  </ul>
+                </div>
+              ) : (
+                <div>
+                 <button className="btn btn-primary">Login</button>
+                 <button className="btn btn-primary">Register</button>
+                </div>
+              )}
             </div>
           </div>
         </div>
