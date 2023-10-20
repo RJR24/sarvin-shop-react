@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 16px;
-  width: 288px;
+  width: 20rem;
   height: 347px;
   /* shadow 1 */
   box-shadow: -2px 2px 15px -1px rgba(113, 113, 113, 0.12);
@@ -38,9 +38,9 @@
   gap: 24px;
   margin-top: 32px;
 }
-.cardContainer img {
+/* .cardContainer img {
   width: 272px;
-}
+} */
 .info {
   display: flex;
   height: 93px;
