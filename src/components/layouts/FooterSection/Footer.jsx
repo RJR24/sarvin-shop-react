@@ -2,23 +2,24 @@ import React, { Fragment } from "react";
 
 import "./footer-styles.css";
 
-import instagramIcon from "../../assets/images/icons/instagram.svg";
-import facebookIcon from "../../assets/images/icons/facebook.svg";
-import youtubeIcon from "../../assets/images/icons/youtube.svg";
-import twitterIcon from "../../assets/images/icons/twitter.svg";
-import masterCard from "../../assets/images/icons/masterCard.svg";
-import visaCard from "../../assets/images/icons/Visa.svg";
-import payPal from "../../assets/images/icons/payPal.svg";
-import amex from "../../assets/images/icons/Amex.svg";
-import copyRight from "../../assets/images/icons/copy-right.svg";
-import location from "../../assets/images/icons/location.svg";
-import HeimSupport from "../../assets/images/icons/techHeimSupport.svg";
-import phone from "../../assets/images/icons/phone.svg";
+import instagramIcon from "../../../assets/images/icons/instagram.svg";
+import facebookIcon from "../../../assets/images/icons/facebook.svg";
+import youtubeIcon from "../../../assets/images/icons/youtube.svg";
+import twitterIcon from "../../../assets/images/icons/twitter.svg";
+import masterCard from "../../../assets/images/icons/masterCard.svg";
+import visaCard from "../../../assets/images/icons/Visa.svg";
+import payPal from "../../../assets/images/icons/payPal.svg";
+import amex from "../../../assets/images/icons/Amex.svg";
+import copyRight from "../../../assets/images/icons/copy-right.svg";
+import location from "../../../assets/images/icons/location.svg";
+import HeimSupport from "../../../assets/images/icons/techHeimSupport.svg";
+import phone from "../../../assets/images/icons/phone.svg";
 
 const Footer = () => {
   return (
-    <Fragment>
-      <div className="footer-container">
+    <>
+     <div className="d-none d-md-block">
+     <div className="footer-container">
         <div class=" footer-info d-flex justify-content-around">
           <div className="footer-section1">
             <div className="c-title">Company</div>
@@ -95,7 +96,25 @@ const Footer = () => {
           <span>Imprint</span>
         </div>
       </div>
-    </Fragment>
+     </div>
+
+     <div className="d-block   d-md-none">
+      <div className="bg-black text-white">
+        <p>footer</p>
+        <p>footer</p>
+        <p>footer</p>
+        <p>footer</p>
+        <p>footer</p>
+        <p>footer</p>
+        <p>footer</p>
+        <p>footer</p>
+        <p>footer</p>
+        <p>footer</p>
+        <p>footer</p>
+       
+      </div>
+     </div>
+    </>
   );
 };
 
