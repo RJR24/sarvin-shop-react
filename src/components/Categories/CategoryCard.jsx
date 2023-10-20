@@ -3,8 +3,8 @@ import "./category.css";
 
 const CategoryCard = ({ title, image }) => {
   return (
-    <div className="cat">
-      <img src={image} alt="" width="80px" /> <br />
+    <div className="cat col-sm-5 col-md-1 ">
+      <img src={image} alt="" width="100px" /> <br />
       <span>{title}</span>
     </div>
   );
