@@ -21,7 +21,7 @@ const catList = [
 ];
 const Categories = () => {
   return (
-    <div className="d-flex justify-content-center gap-3 mt-3">
+    <div className="row cat-container d-flex justify-content-center gap-4 mt-3">
       {catList.map((item) => (
         <CategoryCard title={item.title} image={item.image} />
       ))}
