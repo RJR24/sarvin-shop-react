@@ -1,4 +1,5 @@
 import React from "react";
+
 import Categories from "../../components/Categories/Categories";
 import OnSaleProducts from "../../components/OnSale/DiscountedProducts";
 import NewProducts from "../../components/NewProducts/NewProducts";
