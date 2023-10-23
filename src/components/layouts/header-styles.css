@@ -1,3 +1,6 @@
+.header-styles {
+  min-height: 73px;
+}
 .dropdown-menu ul li a {
   text-decoration: none;
 }
@@ -57,9 +60,9 @@ h3 span {
   margin-left: 10px;
   transition: 300ms;
 }
-.active .dropdown-menu{
+.active .dropdown-menu {
   display: block;
 }
-.inactive .dropdown-menu{
+.inactive .dropdown-menu {
   display: none;
 }
