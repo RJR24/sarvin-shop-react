@@ -5,12 +5,13 @@ import OnSaleProducts from "../../components/OnSale/DiscountedProducts";
 import NewProducts from "../../components/NewProducts/NewProducts";
 import BestSellersList from "../../components/Best-seller-products/NewBestSeller.jsx";
 
-import banner from "../../assets/Frame 26086920.png";
 import TopBrands from "../../components/TopBrands/TopBrands";
 import SmartWatch from "../../components/smartWatchBanner/SmartWatchBanner.jsx";
 import NewBlogs from "../../components/OurBlogSection/OurBlog";
 import OurServices from "../../components/Services/OurServices";
 import Hero from "../../components/HeroSection/Hero";
+import HomeBanner from "../../components/homePageBanner/HomeBanner";
+
 
 const Home = () => {
   return (
@@ -19,9 +20,7 @@ const Home = () => {
       <Categories />
       <OnSaleProducts />
       <NewProducts />
-      <div className="container d-flex justify-content-center">
-        <img src={banner} alt="banner" />
-      </div>
+      <HomeBanner />
       <BestSellersList />
       <TopBrands />
       <SmartWatch />
