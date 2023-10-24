@@ -13,15 +13,16 @@ const OurBlogCard = ({ data, image, dir }) => {
                 class="img-fluid rounded-start"
                 id="blogCardImage"
                 alt={data.title}
+                className="w-100"
               />
             </div>
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title">{data.title}</h5>
-                <p class="card-text">{data.blogSummary}</p>
-                <p class="card-text">
+                <span class="card-text">{data.blogSummary}</span>
+                <span class="card-text">
                   <small class="text-body-secondary">{data.publishDate}</small>
-                </p>
+                </span>
               </div>
             </div>
           </div>
@@ -31,10 +32,10 @@ const OurBlogCard = ({ data, image, dir }) => {
           <img src={image} class="card-img-top" alt={data.title} />
 
           <div class="card-body">
-            <p class="card-text">
+            <span class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
-            </p>
+            </span>
           </div>
         </div>
       )}
