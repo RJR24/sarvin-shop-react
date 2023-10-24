@@ -1,28 +1,27 @@
-.newProductCard {
+.newBestSellerCard {
   border-radius: 8px;
   background: var(--White, #fff);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  padding: 16px;
-  width: 288px;
-  height: 347px;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 19.1rem;
+  height: 22.5rem;
   /* shadow 1 */
   box-shadow: -2px 2px 15px -1px rgba(113, 113, 113, 0.12);
 }
-.newProductCard :hover {
+.newBestSellerCard :hover {
   cursor: pointer;
-  gap: 32px;
 }
 .bestSellerTitle {
   display: flex;
   justify-content: space-between;
   max-width: 100%;
   border-bottom: 2px solid #b4b4b4;
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
 }
-.nProductsContainer {
+.nBestSellersContainer {
   margin-top: 48px;
 }
 .BSTitleText {
@@ -35,18 +34,20 @@
 .cardContainer {
   display: flex;
   justify-content: center;
-  gap: 24px;
-  margin-top: 32px;
+  gap: 1.5rem;
+  /* width: 100%; */
+  margin-top: 2rem;
 }
 .cardContainer img {
-  width: 272px;
+  width: 11.7rem;
+  height: 10rem;
 }
-.info {
+.cardInfo {
   display: flex;
-  height: 93px;
+  height: 6rem;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 1rem;
   flex-shrink: 0;
   align-self: stretch;
 }
@@ -57,7 +58,8 @@
   align-self: stretch;
 }
 .price-rate img {
-  width: 20px;
+  width: 1.4rem;
+  height: 2rem;
 }
 #rate {
   display: flex;
