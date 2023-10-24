@@ -30,15 +30,17 @@ const newProductsList = [
 ];
 const NewProducts = () => {
   return (
-    <div className=" nProductsContainer ">
-      <div className="title">
-        <div className="titleText">New Products</div>
-        <button className="btn ">
-          View all <img src={arrowCircleRight} alt="right arrow" />
-        </button>
+    <div className="  nProductsContainer ">
+      <div className=" row nPTitle">
+        <div className=" col titleText">New Products</div>
+        <div className="col d-flex justify-content-end">
+          <button className=" btn ">
+            View all <img src={arrowCircleRight} alt="right arrow" />
+          </button>
+        </div>
       </div>
 
-      <div className="cardContainer">
+      <div className="row newCardContainer">
         {newProductsList.map((item) => (
           <NewProductsCard data={item.data} image={item.image} />
         ))}
