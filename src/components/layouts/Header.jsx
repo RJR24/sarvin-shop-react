@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./header.css";
+import "./header-styles.css";
 import logo from "../../assets/images/icons/logo.svg";
 import search from "../../assets/images/icons/search.svg";
 import user from "../../assets/images/icons/user.svg";
@@ -16,9 +16,9 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const username= useSelector((state)=>state.userReducer.username)
+  const username = useSelector((state) => state.userReducer.username);
   return (
-    <header className=" py-3 ">
+    <header className=" header-styles py-3 ">
       <div className="container d-flex justify-content-between">
         <div>
           <img src={logo} alt="" width="30" />
@@ -85,8 +85,8 @@ const Header = () => {
                 </div>
               ) : (
                 <div>
-                 <button className="btn btn-primary">Login</button>
-                 <button className="btn btn-primary">Register</button>
+                  <button className="btn btn-primary">Login</button>
+                  <button className="btn btn-primary">Register</button>
                 </div>
               )}
             </div>
