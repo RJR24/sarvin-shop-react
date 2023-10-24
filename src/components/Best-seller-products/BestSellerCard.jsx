@@ -3,12 +3,12 @@ import star from "./../../assets/images/arrows-btn-etc/star.svg";
 
 const NewBestSellerCard = ({ data, image }) => {
   return (
-    <div className="newProductCard">
+    <div className="newBestSellerCard col-md-3 col-sm-6 col-5 ">
       <div>
-        <img src={image} alt="" width="100px" />
+        <img src={image} alt="" />
       </div>
 
-      <div className="info">
+      <div className="cardInfo">
         <div>{data.specification}</div>
 
         <div className="price-rate">

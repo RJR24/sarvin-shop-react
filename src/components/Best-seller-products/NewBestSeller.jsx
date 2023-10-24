@@ -14,7 +14,7 @@ const BestSellersList = [
     data: {
       price: 100,
       newPrice: 95,
-      specification: "model and detail",
+      specification: "model and details model and details model and details ",
       rate: 4.9,
     },
     image: PS4,
@@ -23,7 +23,7 @@ const BestSellersList = [
     data: {
       price: 100,
       newPrice: 95,
-      specification: "model and details",
+      specification: "model and details model and details model and details ",
       rate: 4.9,
     },
     image: headSet,
@@ -32,7 +32,7 @@ const BestSellersList = [
     data: {
       price: 100,
       newPrice: 95,
-      specification: "model and details",
+      specification: "model and details model and details model and details ",
       rate: 5,
     },
     image: mcBookAir15,
@@ -41,15 +41,15 @@ const BestSellersList = [
     data: {
       price: 100,
       newPrice: 95,
-      specification: "model and details",
+      specification: "model and details model and details model and details ",
       rate: 4.8,
     },
     image: airPodPro2,
   },
 ];
-const NewProducts = () => {
+const NewBestSellers = () => {
   return (
-    <div className=" nProductsContainer ">
+    <div className=" nBestSellerContainer ">
       <div className="bestSellerTitle">
         <div className="BSTitleText">Best Seller</div>
         <button className="btn ">
@@ -57,7 +57,7 @@ const NewProducts = () => {
         </button>
       </div>
 
-      <div className="cardContainer">
+      <div className="cardContainer row">
         {BestSellersList.map((item) => (
           <NewBestSellerCard data={item.data} image={item.image} />
         ))}
@@ -66,4 +66,4 @@ const NewProducts = () => {
   );
 };
 
-export default NewProducts;
+export default NewBestSellers;
