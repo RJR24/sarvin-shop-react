@@ -1,5 +1,5 @@
 import React from "react";
-import "./topBrandsStyles.css"
+import "./topBrandsStyles.css";
 
 import Apple from "../../assets/images/icons/Apple.svg";
 import Sony from "../../assets/images/icons/Sony.svg";
@@ -12,7 +12,7 @@ const TopBrands = () => {
   return (
     <div>
       <div className="brandsTitle">Top Brands</div>
-      <div id="brandsName">
+      <div id="brandsName" className="d-flex  flex-wrap">
         <div>
           <img src={Apple} alt="Apple logo" />
         </div>
