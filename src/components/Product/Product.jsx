@@ -25,19 +25,19 @@ const Product = () => {
     <div className=" row container">
       <div className="col-md-5 bg-danger  product-div">
         <div className="product-image">
-          <img src={macBookProM2} alt="MacBook pro m2" />
+          <img src={macBookProM2} alt="MacBook pro m2" className=" w-100 " />
         </div>
-        <div className="product-sub-image d-flex align-items-start justify-content-around mt-3">
-          <div>
+        <div className="product-sub-image row d-flex align-items-center justify-content-center mt-3 g-1 mb-2">
+          <div className="col d-flex justify-content-center">
             <img src={macBookProM201} alt="macBook Pro m2" />
           </div>
-          <div>
+          <div className="col d-flex justify-content-center">
             <img src={macBookProM202} alt="macBook Pro m2" />
           </div>
-          <div>
+          <div className="col d-flex justify-content-center">
             <img src={macBookProM203} alt="macBook Pro m2" />
           </div>
-          <div>
+          <div className="col d-flex justify-content-center">
             <img src={macBookProM204} alt="macBook Pro m2" />
           </div>
         </div>
@@ -57,14 +57,14 @@ const Product = () => {
                 <span className=" fs-5  ">sold 125</span>
               </div>
             </div>
-            <div className=" d-flex align-items-center gap-4">
-              <span className=" d-flex align-items-center justify-content-center ">
+            <div className="row d-flex align-items-center g-4">
+              <span className=" col d-flex align-items-center justify-content-center ">
                 <img src={shop} alt="" /> In Stock
               </span>
-              <span className=" d-flex align-items-center justify-content-center ">
+              <span className=" col d-flex align-items-center justify-content-center ">
                 <img src={guaranteed} alt="" /> Guaranteed
               </span>
-              <span className=" d-flex align-items-center justify-content-center ">
+              <span className=" col d-flex align-items-center justify-content-center ">
                 <img src={delivery} alt="" /> Free Delivery
               </span>
             </div>
