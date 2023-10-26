@@ -3,6 +3,9 @@ import Pc from "../assets/images/products/Pc.png";
 import shoes from "../assets/images/products/shoes.png";
 import camera from "../assets/images/products/camera.png";
 import jeans from "../assets/images/products/jeans.png";
+import MacBookM2Pro from "../assets/images/pro02/macBook-pro-m2/macBook-pro-m2.png";
+
+
 export const PRODUCTS = [
   {
     id: 1,
@@ -34,4 +37,10 @@ export const PRODUCTS = [
     price: 500,
     productImage: shoes,
   },
+  {
+    id:6,
+    productName: "MacBook Pro M2",
+    price: 500,
+    productImage: MacBookM2Pro,
+  }
 ];
