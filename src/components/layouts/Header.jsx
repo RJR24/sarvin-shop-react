@@ -18,6 +18,7 @@ import { login, logout } from "../../redux/slices/userSlice";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const username = useSelector((state) => state.userReducer.username);
+  const { totalQty } = useSelector((state) => state.cartReducer);
   const dispatcher = useDispatch();
   const userLogin = () => {
     dispatcher(login({ username: "Kaveh024" }));
@@ -55,13 +56,18 @@ const Header = () => {
             Contact us
           </Link>
         </nav>
-        <div>
+        <div className=" d-flex ">
           <button className="bg-transparent border-0 pe-3">
             <img src={search} alt="" />
           </button>
-          <Link to="" className="pe-3">
-            <img src={basket} alt="" />
-          </Link>
+          <div className="basket">
+            <Link to="" className="pe-3 position-relative">
+              <img src={basket} alt="" />
+              <span className="position-absolute bg-danger text-white rounded-circle">
+                {totalQty}
+              </span>
+            </Link>
+          </div>
 
           <div
             className={`menu-trigger  d-inline ${open ? "active" : "inactive"}`}
@@ -79,14 +85,18 @@ const Header = () => {
                   <h3>
                     {username}
                     <br />
-                    <span>User@gmail.com</span>
+                    <span>{username}@gmail.com</span>
                   </h3>
                   <ul className="list-unstyled">
                     <DropdownItem img={profile} text={"My Profile"} />
                     <DropdownItem img={orders} text={"Orders"} />
                     <DropdownItem img={wishList} text={"Wish List"} />
                     <DropdownItem img={payments} text={"Payments"} />
-                    <DropdownItem img={logoutIcon} text={"Log Out"}  event={true} />
+                    <DropdownItem
+                      img={logoutIcon}
+                      text={"Log Out"}
+                      event={true}
+                    />
                   </ul>
                 </div>
               ) : (
