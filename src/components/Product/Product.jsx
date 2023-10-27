@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./productStyles.css";
-import {PRODUCTS} from "../../data/products"
+import { PRODUCTS } from "../../data/products";
 
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../redux/slices/cartSlice";
@@ -20,13 +20,17 @@ import shop from "../../assets/images/icons/shop.svg";
 const Product = () => {
   const dispatcher = useDispatch();
   const addToCart = () => {
-    dispatcher(addToBasket({ basket: PRODUCTS[5].productName }));
+    dispatcher(addToBasket({ basket: PRODUCTS[5] }));
   };
   return (
     <div className=" row container">
       <div className="col-md-5 bg-danger  product-div">
         <div className="product-image">
-          <img src={PRODUCTS[5].productImage} alt="MacBook pro m2" className=" w-100 " />
+          <img
+            src={PRODUCTS[5].productImage}
+            alt="MacBook pro m2"
+            className=" w-100 "
+          />
         </div>
         <div className="product-sub-image row d-flex align-items-center justify-content-center mt-3 g-1 mb-2">
           <div className="col d-flex justify-content-center">
@@ -46,7 +50,7 @@ const Product = () => {
       <div className="col-md-4 bg-warning-subtle specifications">
         <div className="sTop d-flex justify-content-start flex-column gap-2">
           <div className="pro-name">
-          {PRODUCTS[5].productName} MNEJ3 2022 LLA {<br />} 13.3 inch
+            {PRODUCTS[5].productName} MNEJ3 2022 LLA {<br />} 13.3 inch
           </div>
           <div className="rate-color d-flex justify-content-start flex-column gap-4">
             <div>
