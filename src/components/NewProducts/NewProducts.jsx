@@ -31,7 +31,7 @@ const newProductsList = [
 const NewProducts = () => {
   return (
     <div className="  nProductsContainer ">
-      <div className=" row nPTitle">
+      <div className=" row d-flex justify-content-between w-100 pb-3 nPTitle">
         <div className=" col titleText">New Products</div>
         <div className="col d-flex justify-content-end">
           <button className=" btn ">

@@ -3,7 +3,10 @@ import star from "./../../assets/images/arrows-btn-etc/star.svg";
 
 const NewProductsCard = ({ data, image }) => {
   return (
-    <div className="col-6 col newProductCard">
+    <div
+      className="col col-sm-5 col-md-3 col-lg-2
+     d-flex flex-column align-items-center justify-content-center  newProductCard"
+    >
       <div>
         <img src={image} alt="" width="100px" />
       </div>
