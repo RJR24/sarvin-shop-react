@@ -2,7 +2,7 @@
 .footer-container {
   background: var(--primary-primary-900);
   width: 100%;
-  background-image: url();
+  /* background-image: url(); */
 }
 .footer-info {
   color: var(--neutral-gray);
