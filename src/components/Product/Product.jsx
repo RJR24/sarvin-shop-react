@@ -1,15 +1,16 @@
 import React from "react";
 
 import "./productStyles.css";
+import {PRODUCTS} from "../../data/products"
 
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../redux/slices/cartSlice";
 
-import macBookProM2 from "../../assets/images/pro02/macbook-pro-m2/macBook-pro-m2.png";
-import macBookProM201 from "../../assets/images/pro02/macbook-pro-m2/Frame 26086019.png";
-import macBookProM202 from "../../assets/images/pro02/macbook-pro-m2/Frame 26086021.png";
-import macBookProM203 from "../../assets/images/pro02/macbook-pro-m2/Frame 26086022.png";
-import macBookProM204 from "../../assets/images/pro02/macbook-pro-m2/Frame 26086048.png";
+// import macBookProM2 from "../../assets/images/pro02/macBook-pro-m2/macBook-pro-m2.png";
+import macBookProM201 from "../../assets/images/pro02/macBook-pro-m2/Frame 26086019.png";
+import macBookProM202 from "../../assets/images/pro02/macBook-pro-m2/Frame 26086021.png";
+import macBookProM203 from "../../assets/images/pro02/macBook-pro-m2/Frame 26086022.png";
+import macBookProM204 from "../../assets/images/pro02/macBook-pro-m2/Frame 26086048.png";
 
 import star from "../../assets/images/icons/star.svg";
 import guaranteed from "../../assets/images/icons/guaranteed.svg";
@@ -19,13 +20,13 @@ import shop from "../../assets/images/icons/shop.svg";
 const Product = () => {
   const dispatcher = useDispatch();
   const addToCart = () => {
-    dispatcher(addToBasket({ basket: "productId" }));
+    dispatcher(addToBasket({ basket: PRODUCTS[5].productName }));
   };
   return (
     <div className=" row container">
       <div className="col-md-5 bg-danger  product-div">
         <div className="product-image">
-          <img src={macBookProM2} alt="MacBook pro m2" className=" w-100 " />
+          <img src={PRODUCTS[5].productImage} alt="MacBook pro m2" className=" w-100 " />
         </div>
         <div className="product-sub-image row d-flex align-items-center justify-content-center mt-3 g-1 mb-2">
           <div className="col d-flex justify-content-center">
@@ -45,7 +46,7 @@ const Product = () => {
       <div className="col-md-4 bg-warning-subtle specifications">
         <div className="sTop d-flex justify-content-start flex-column gap-2">
           <div className="pro-name">
-            MacBook Pro M2 MNEJ3 2022 LLA {<br />} 13.3 inch
+          {PRODUCTS[5].productName} MNEJ3 2022 LLA {<br />} 13.3 inch
           </div>
           <div className="rate-color d-flex justify-content-start flex-column gap-4">
             <div>
