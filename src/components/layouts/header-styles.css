@@ -60,9 +60,20 @@ h3 span {
   margin-left: 0.8rem;
   transition: 400ms;
 }
-.active .dropdown-menu {
+.userActive .dropdown-menu {
   display: block;
 }
-.inactive .dropdown-menu {
+.userInactive .dropdown-menu {
   display: none;
+}
+.basketActive .dropdown-menu {
+  display: block;
+}
+.basketInactive .dropdown-menu {
+  display: none;
+}
+.cartItems {
+  width: 200px;
+  height: 500px;
+  background-color: blue;
 }
