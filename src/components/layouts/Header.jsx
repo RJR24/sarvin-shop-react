@@ -17,6 +17,9 @@ import { login, logout } from "../../redux/slices/userSlice";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [basketOpen, setBasketOpen] = useState(false);
+
+  const basketStatus = useSelector((state) => state.cartReducer.basket);
   const username = useSelector((state) => state.userReducer.username);
   const { totalQty } = useSelector((state) => state.cartReducer);
   const dispatcher = useDispatch();
@@ -60,23 +63,61 @@ const Header = () => {
           <button className="bg-transparent border-0 pe-3">
             <img src={search} alt="" />
           </button>
-          <div className="basket">
+          <div
+            className={`basket menu-trigger  d-inline ${
+              basketOpen ? "basketActive" : "basketInactive"
+            }`}
+            onMouseEnter={() => setBasketOpen(true)}
+            onMouseLeave={() => setBasketOpen(false)}
+          >
             <Link to="" className="pe-3 position-relative">
-              <img src={basket} alt="" />
+              <img src={basket} alt="basket" />
               <span className="position-absolute bg-danger text-white rounded-circle">
                 {totalQty}
               </span>
             </Link>
+            <div className="dropdown-menu">
+              {basketStatus ? (
+                <div>
+                  <h3>
+                    <span>{username} basket</span>
+                  </h3>
+                  <hr />
+                  {/* <div className="cartItems">
+
+                  </div> */}
+                  <ul className="list-unstyled">
+                    <DropdownItem img={profile} text={"product 1"} />
+                    <DropdownItem img={orders} text={"product 2"} />
+                    <DropdownItem img={wishList} text={"product 3"} />
+                    <DropdownItem img={payments} text={"product 4"} />
+                    <DropdownItem
+                      img={logoutIcon}
+                      text={"Log Out"}
+                      event={true}
+                    />
+                  </ul>
+                </div>
+              ) : (
+                <div>
+                  <h3 className="bg-warning" width="100px">
+                    Basket is empty!
+                  </h3>
+                </div>
+              )}
+            </div>
           </div>
 
           <div
-            className={`menu-trigger  d-inline ${open ? "active" : "inactive"}`}
+            className={`menu-trigger  d-inline ${
+              open ? "userActive" : "userInactive"
+            }`}
             onClick={() => {
               setOpen(!open);
             }}
           >
             <Link to="">
-              <img src={user} alt="" />
+              <img src={user} alt="user" />
             </Link>
 
             <div className="dropdown-menu">
@@ -120,6 +161,7 @@ function DropdownItem(props) {
   const userLogout = () => {
     dispatcher(logout());
   };
+  console.log(props.text);
   return (
     <>
       {props.event ? (
