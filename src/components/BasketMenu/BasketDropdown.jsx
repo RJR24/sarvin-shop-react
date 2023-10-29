@@ -5,7 +5,7 @@ import basketItemsCard from "./basketItemsCard";
 const BasketDropdown = () => {
   return (
   <div>
-    
+    <basketItemsCard />
   </div>)
 };
 
