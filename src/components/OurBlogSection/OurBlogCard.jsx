@@ -5,34 +5,34 @@ const OurBlogCard = ({ data, image, dir }) => {
   return (
     <>
       {dir === "horizontal" ? (
-        <div class="card" style={{ border: "none" }}>
-          <div class="row g-0 card-background">
-            <div class="col-md-4">
+        <div className="card" style={{ border: "none" }}>
+          <div className="row g-0 card-background">
+            <div className="col-md-4">
               <img
                 src={image}
-                class="img-fluid rounded-start"
-                id="blogCardImage"
+                className="img-fluid rounded-start w-100"
                 alt={data.title}
-                className="w-100"
               />
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">{data.title}</h5>
-                <span class="card-text">{data.blogSummary}</span>
-                <span class="card-text">
-                  <small class="text-body-secondary">{data.publishDate}</small>
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-title">{data.title}</h5>
+                <span className="card-text">{data.blogSummary}</span>
+                <span className="card-text">
+                  <small className="text-body-secondary">
+                    {data.publishDate}
+                  </small>
                 </span>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        <div class="card h-100 card-background" style={{ border: "none" }}>
-          <img src={image} class="card-img-top" alt={data.title} />
+        <div className="card h-100 card-background" style={{ border: "none" }}>
+          <img src={image} className="card-img-top" alt={data.title} />
 
-          <div class="card-body">
-            <span class="card-text">
+          <div className="card-body">
+            <span className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </span>
