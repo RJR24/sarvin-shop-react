@@ -1,23 +1,25 @@
 import React from "react";
 
-import checkoutTrolley from "../../assets/images/icons/checkout-trolley.svg";
 import guaranteed from "../../assets/images/icons/guaranteed.svg";
 import freeDelivery from "../../assets/images/icons/delivery.svg";
 import plus from "../../assets/images/icons/plus.svg";
 import minus from "../../assets/images/icons/minus.svg";
 import bin from "../../assets/images/icons/bin.svg";
 
-const basketItemsCard = () => {
+const BasketItemsCard = ({productImage, productName}) => {
+ 
   return (
     <div>
       <div className="basket-container d-flex flex-column justify-content-start align-items-center">
-        <div className="itemsNumber">3 items</div>
         <div className="itemsList d-flex flex-column justify-content-start ">
-          <div className="product-image"></div>
+          <div className="product-image">
+            <img src={productImage} alt="" />
+          </div>
           <div className="product-details">
             <div>
               <div className="model-name">
-                Inateck 12.3-13 Inch MacBook Case Sleeve
+                {/* Inateck 12.3-13 Inch MacBook Case Sleeve */}
+                {productName}
               </div>
               <div className="color-numbers d-flex flex-column justify-content-between">
                 <span>blue</span>
@@ -47,20 +49,10 @@ const basketItemsCard = () => {
             </div>
           </div>
         </div>
-        <div className="proceed-to-checkout">
-          <div>
-            Grand total <br />
-            $543.02
-          </div>
-          <div>
-            <button className="btn btn-primary px-4 py-2">
-              Proceed to cart <img src={checkoutTrolley} alt="trolley" />
-            </button>
-          </div>
-        </div>
+        
       </div>
     </div>
   );
 };
 
-export default basketItemsCard;
+export default BasketItemsCard;
