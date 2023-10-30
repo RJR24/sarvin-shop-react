@@ -66,12 +66,24 @@ h3 span {
 .userInactive .dropdown-menu {
   display: none;
 }
-.basketActive .dropdown-menu {
-  display: block;
-}
-.basketInactive .dropdown-menu {
+.basket-dropdown{
   display: none;
 }
+.basket:hover .basket-dropdown {
+  display: block;
+}
+
+/* .company-name:hover.company-name{
+color: aqua;
+} */
+/* .company-name:hover{
+  color: aqua;
+  } */
+
+/* header:hover nav{
+background-color: red;
+} */
+
 .cartItems {
   width: 200px;
   height: 500px;
