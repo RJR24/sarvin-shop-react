@@ -11,15 +11,18 @@ import orders from "../../assets/images/icons/orders.svg";
 import wishList from "../../assets/images/icons/wishList.svg";
 import payments from "../../assets/images/icons/payments.svg";
 import logoutIcon from "../../assets/images/icons/logout.svg";
+
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout } from "../../redux/slices/userSlice";
+import BasketDropdown from "../BasketMenu/BasketDropdown";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [basketOpen, setBasketOpen] = useState(false);
 
-  const basketStatus = useSelector((state) => state.cartReducer.basket);
+  const basketItems = useSelector((state) => state.cartReducer.basket);
+  // console.log(basketItems, "cart item");
   const username = useSelector((state) => state.userReducer.username);
   const { totalQty } = useSelector((state) => state.cartReducer);
   const dispatcher = useDispatch();
@@ -63,41 +66,24 @@ const Header = () => {
           <button className="bg-transparent border-0 pe-3">
             <img src={search} alt="" />
           </button>
-          <div
+          {/* <div
             className={`basket menu-trigger  d-inline ${
               basketOpen ? "basketActive" : "basketInactive"
             }`}
             onMouseEnter={() => setBasketOpen(true)}
             onMouseLeave={() => setBasketOpen(false)}
-          >
+          > */}
+
+          <div className="basket menu-trigger  d-inline-block">
             <Link to="" className="pe-3 position-relative">
               <img src={basket} alt="basket" />
               <span className="position-absolute bg-danger text-white rounded-circle">
                 {totalQty}
               </span>
             </Link>
-            <div className="dropdown-menu">
-              {basketStatus ? (
-                <div>
-                  <h3>
-                    <span>{username} basket</span>
-                  </h3>
-                  <hr />
-                  {/* <div className="cartItems">
-
-                  </div> */}
-                  <ul className="list-unstyled">
-                    <DropdownItem img={profile} text={"product 1"} />
-                    <DropdownItem img={orders} text={"product 2"} />
-                    <DropdownItem img={wishList} text={"product 3"} />
-                    <DropdownItem img={payments} text={"product 4"} />
-                    <DropdownItem
-                      img={logoutIcon}
-                      text={"Log Out"}
-                      event={true}
-                    />
-                  </ul>
-                </div>
+            <div className="basket-dropdown  dropdown-menu">
+              {basketItems.length ? (
+                <BasketDropdown />
               ) : (
                 <div>
                   <h3 className="bg-warning" width="100px">
@@ -161,7 +147,6 @@ function DropdownItem(props) {
   const userLogout = () => {
     dispatcher(logout());
   };
-  console.log(props.text);
   return (
     <>
       {props.event ? (
@@ -180,3 +165,24 @@ function DropdownItem(props) {
 }
 
 export default Header;
+
+// <div>
+//                   <h3>
+//                     <span>{username} basket</span>
+//                   </h3>
+//                   <hr />
+//                   {/* <div className="cartItems">
+
+//                   </div> */}
+//                   <ul className="list-unstyled">
+//                     <DropdownItem img={profile} text={"product 1"} />
+//                     <DropdownItem img={orders} text={"product 2"} />
+//                     <DropdownItem img={wishList} text={"product 3"} />
+//                     <DropdownItem img={payments} text={"product 4"} />
+//                     <DropdownItem
+//                       img={logoutIcon}
+//                       text={"Log Out"}
+//                       event={true}
+//                     />
+//                   </ul>
+//                 </div>
