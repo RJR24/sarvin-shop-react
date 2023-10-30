@@ -29,3 +29,8 @@ flex-shrink: 0;
    height: 20rem;
    margin-top: 3rem;
 }
+.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right{
+position: absolute!important;
+background-color: rebeccapurple;
+bottom: 1.5rem;
+} 

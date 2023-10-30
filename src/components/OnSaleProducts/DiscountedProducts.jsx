@@ -70,7 +70,7 @@ const OnSaleProducts = () => {
     //       View all <img src={arrowCircleRight} alt="right arrow" />
     //     </button>
     // </div>
-    <Carousel className="pOnSaleContainer" responsive={responsive}>
+    <Carousel  partialVisible={false} itemClass={{"padding-right": "300px!important"}} className="pOnSaleContainer" responsive={responsive}>
       {onSaleProductsList.map((item) => (
         <ProductOnSaleCard data={item.data} image={item.image} />
       ))}
