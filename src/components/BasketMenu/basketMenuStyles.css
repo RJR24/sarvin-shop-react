@@ -1,0 +1,30 @@
+.items-container{
+
+}
+.itemsList{
+  box-shadow: -2px 2px 15px -1px rgba(113, 113, 113, 0.12);
+border-radius: .5rem;
+}
+.cartItems{
+  width: 100%;
+}
+
+.product-image {
+  width: 45%;
+}
+.product-details {
+  width: 55%;
+}
+.plus-minus{
+  border-bottom: 1px solid #9E9E9E;
+}
+
+/* .proceed-to-checkout {
+  max-height: 4rem;
+}
+.checkout-btn{
+  width: 65%;
+}
+.total-price {
+  width: 35%;
+} */
