@@ -1,6 +1,25 @@
 .header-styles {
   min-height: 73px;
 }
+.mobile-logo{
+  width: 3rem;
+}
+@media  (width <= 768px) {
+  .header-styles {
+   display: none;
+  }
+  .mobile-navbar {
+    display: block;
+  }
+}
+@media  (width >= 768px) {
+  .header-styles {
+   display: block;
+  }
+  .mobile-navbar {
+    display: none;
+  }
+}
 .dropdown-menu ul li a {
   text-decoration: none;
 }
