@@ -19,12 +19,12 @@ const BasketDropdown = () => {
         </div>
       </div>
       <div className="proceed-to-checkout d-flex gap-4">
-        <div className="total-price">
+        <div className="total-price col-4">
           Grand total <br />
           $543.02
         </div>
-        <div>
-          <button className="checkout-btn btn btn-primary d-flex justify-content-center align-items-center gap-2 px-4 py-2">
+        <div className="col-8">
+          <button className=" checkout-btn btn btn-primary w-100 d-flex justify-content-center align-items-center gap-2 px-4 py-2">
             <div> Proceed to cart </div>
             <img src={checkoutTrolley} alt="trolley" className="" />
           </button>
