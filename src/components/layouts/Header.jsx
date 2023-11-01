@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./header-styles.css";
+
 import logo from "../../assets/images/icons/logo.svg";
 import search from "../../assets/images/icons/search.svg";
 import user from "../../assets/images/icons/user.svg";
@@ -16,10 +17,11 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout } from "../../redux/slices/userSlice";
 import BasketDropdown from "../BasketMenu/BasketDropdown";
+import MobileNavScroll from "./FooterSection/Header-mobile";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [basketOpen, setBasketOpen] = useState(false);
+  // const [basketOpen, setBasketOpen] = useState(false);
 
   const basketItems = useSelector((state) => state.cartReducer.basket);
   // console.log(basketItems, "cart item");
@@ -31,42 +33,46 @@ const Header = () => {
   };
 
   return (
-    <header className=" header-styles py-3 ">
-      <div className="container d-flex justify-content-between">
-        <div>
-          <img src={logo} alt="" width="30" />
-        </div>
-        <nav className="nav">
-          <Link to="/" className="nav-link text-black blue-hover-color">
-            Home
-          </Link>
-          <div className="">
+    <>
+      <div className="mobile-navbar">
+        <MobileNavScroll />
+      </div>
+      <header className=" header-styles py-3 ">
+        <div className="container d-flex justify-content-between">
+          <div>
+            <img src={logo} alt="" width="30" />
+          </div>
+          <nav className="nav gap-4">
+            <Link to="/" className="nav-link text-black blue-hover-color">
+              Home
+            </Link>
+            <div className="">
+              <Link
+                to="/products"
+                className="nav-link text-black blue-hover-color"
+              >
+                Products
+              </Link>
+              <div className="sub-menu"></div>
+            </div>
+            <Link to="/blog" className="nav-link text-black blue-hover-color">
+              Blog
+            </Link>
+            <Link to="/faq" className="nav-link text-black blue-hover-color">
+              FAQ
+            </Link>
             <Link
-              to="/products"
+              to="/contact-us"
               className="nav-link text-black blue-hover-color"
             >
-              Products
+              Contact us
             </Link>
-            <div className="sub-menu"></div>
-          </div>
-          <Link to="/blog" className="nav-link text-black blue-hover-color">
-            Blog
-          </Link>
-          <Link to="/faq" className="nav-link text-black blue-hover-color">
-            FAQ
-          </Link>
-          <Link
-            to="/contact-us"
-            className="nav-link text-black blue-hover-color"
-          >
-            Contact us
-          </Link>
-        </nav>
-        <div className=" d-flex ">
-          <button className="bg-transparent border-0 pe-3">
-            <img src={search} alt="" />
-          </button>
-          {/* <div
+          </nav>
+          <div className=" d-flex ">
+            <button className="bg-transparent border-0 pe-3">
+              <img src={search} alt="" />
+            </button>
+            {/* <div
             className={`basket menu-trigger  d-inline ${
               basketOpen ? "basketActive" : "basketInactive"
             }`}
@@ -74,71 +80,72 @@ const Header = () => {
             onMouseLeave={() => setBasketOpen(false)}
           > */}
 
-          <div className="basket menu-trigger  d-inline-block">
-            <Link to="" className="pe-3 position-relative">
-              <img src={basket} alt="basket" />
-              <span className="position-absolute bg-danger text-white rounded-circle">
-                {totalQty}
-              </span>
-            </Link>
-            <div className="basket-dropdown  dropdown-menu">
-              {basketItems.length ? (
-                <BasketDropdown />
-              ) : (
-                <div>
-                  <h3 className="bg-warning" width="100px">
-                    Basket is empty!
-                  </h3>
-                </div>
-              )}
+            <div className="basket menu-trigger  d-inline-block">
+              <Link to="" className="pe-3 position-relative">
+                <img src={basket} alt="basket" />
+                <span className="position-absolute bg-danger text-white rounded-circle">
+                  {totalQty}
+                </span>
+              </Link>
+              <div className="basket-dropdown  dropdown-menu ">
+                {basketItems.length ? (
+                  <BasketDropdown />
+                ) : (
+                  <div>
+                    <h3 className="bg-warning" width="100px">
+                      Basket is empty!
+                    </h3>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
 
-          <div
-            className={`menu-trigger  d-inline ${
-              open ? "userActive" : "userInactive"
-            }`}
-            onClick={() => {
-              setOpen(!open);
-            }}
-          >
-            <Link to="">
-              <img src={user} alt="user" />
-            </Link>
+            <div
+              className={`menu-trigger  d-inline ${
+                open ? "userActive" : "userInactive"
+              }`}
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              <Link to="">
+                <img src={user} alt="user" />
+              </Link>
 
-            <div className="dropdown-menu">
-              {username ? (
-                <div>
-                  <h3>
-                    {username}
-                    <br />
-                    <span>{username}@gmail.com</span>
-                  </h3>
-                  <ul className="list-unstyled">
-                    <DropdownItem img={profile} text={"My Profile"} />
-                    <DropdownItem img={orders} text={"Orders"} />
-                    <DropdownItem img={wishList} text={"Wish List"} />
-                    <DropdownItem img={payments} text={"Payments"} />
-                    <DropdownItem
-                      img={logoutIcon}
-                      text={"Log Out"}
-                      event={true}
-                    />
-                  </ul>
-                </div>
-              ) : (
-                <div>
-                  <button className="btn btn-primary" onClick={userLogin}>
-                    Login
-                  </button>
-                  <button className="btn btn-primary">Register</button>
-                </div>
-              )}
+              <div className="dropdown-menu">
+                {username ? (
+                  <div>
+                    <h3>
+                      {username}
+                      <br />
+                      <span>{username}@gmail.com</span>
+                    </h3>
+                    <ul className="list-unstyled">
+                      <DropdownItem img={profile} text={"My Profile"} />
+                      <DropdownItem img={orders} text={"Orders"} />
+                      <DropdownItem img={wishList} text={"Wish List"} />
+                      <DropdownItem img={payments} text={"Payments"} />
+                      <DropdownItem
+                        img={logoutIcon}
+                        text={"Log Out"}
+                        event={true}
+                      />
+                    </ul>
+                  </div>
+                ) : (
+                  <div>
+                    <button className="btn btn-primary" onClick={userLogin}>
+                      Login
+                    </button>
+                    <button className="btn btn-primary">Register</button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 
