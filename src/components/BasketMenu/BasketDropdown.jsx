@@ -18,7 +18,7 @@ const BasketDropdown = () => {
           ))}
         </div>
       </div>
-      <div className="proceed-to-checkout d-flex gap-4">
+      <div className="proceed-to-checkout d-flex align-items-center">
         <div className="total-price col-4">
           Grand total <br />
           $543.02
