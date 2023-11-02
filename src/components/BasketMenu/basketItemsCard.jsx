@@ -20,22 +20,23 @@ const BasketItemsCard = ({ productImage, productName }) => {
               {/* Inateck 12.3-13 Inch MacBook Case Sleeve */}
               {productName}
             </div>
-            <div className="color-numbers d-flex flex-column justify-content-between">
+            <div className="color-numbers d-flex flex-column justify-content-between mt-2">
               <span>blue</span>
               <span>×1</span>
             </div>
           </div>
-          <div className="supports">
-            <div>
-              {" "}
-              <img src={guaranteed} alt="Guarantee" /> Guaranteed
-            </div>
+          <div className="supports mt-2">
+            
             <div>
               {" "}
               <img src={freeDelivery} alt="Free Delivery" /> Free Delivery
             </div>
+            <div>
+              {" "}
+              <img src={guaranteed} alt="Guarantee" /> Guaranteed
+            </div>
           </div>
-          <div className="price-itemManagement d-flex justify-content-between">
+          <div className="price-itemManagement d-flex justify-content-between mt-2">
             <div>$433.00</div>
             <div className="itemManagement d-flex justify-content-between align-items-center">
               <img src={bin} alt="bin" />
