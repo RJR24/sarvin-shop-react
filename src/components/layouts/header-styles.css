@@ -1,24 +1,40 @@
 .header-styles {
   min-height: 73px;
 }
-.mobile-logo{
+.mobile-logo {
   width: 3rem;
 }
-@media  (width <= 768px) {
+@media (width <= 768px) {
   .header-styles {
-   display: none;
+    display: none;
   }
   .mobile-navbar {
     display: block;
   }
 }
-@media  (width >= 768px) {
+@media (width >= 768px) {
   .header-styles {
-   display: block;
+    display: block;
   }
   .mobile-navbar {
     display: none;
   }
+}
+.accordion-item:last-of-type .accordion-button.collapsed {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 22px;
+  color: #0c68f4 !important;
+}
+.accordion-item:last-of-type{
+  border: none;
+
+}
+.mobile-menu-items {
+  padding: 0.35em 1.2em;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.6em;
 }
 .dropdown-menu ul li a {
   text-decoration: none;
