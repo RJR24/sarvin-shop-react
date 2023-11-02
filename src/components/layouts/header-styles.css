@@ -26,15 +26,22 @@
   line-height: 22px;
   color: #0c68f4 !important;
 }
-.accordion-item:last-of-type{
+.accordion-item:last-of-type {
   border: none;
-
 }
 .mobile-menu-items {
   padding: 0.35em 1.2em;
   font-weight: 300;
   font-size: 1em;
   line-height: 1.6em;
+}
+.products-li {
+  font-size: 14px;
+  font-weight: 300;
+  color: #505050;
+}
+.products-li img {
+  color: #505050;
 }
 .dropdown-menu ul li a {
   text-decoration: none;
@@ -47,6 +54,7 @@
   border-radius: 8px;
   padding: 10px 1.2rem;
   width: 40%;
+  min-width: 22.5em;
 }
 .dropdown-menu::before {
   content: "";

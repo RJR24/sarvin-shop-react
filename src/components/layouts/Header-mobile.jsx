@@ -47,40 +47,40 @@ function MobileNavScroll() {
                 <Accordion.Header>Products</Accordion.Header>
                 <Accordion.Body className=" d-flex flex-column">
                   <ul className=" list-unstyled">
-                    <li className="  px-1 py-2 ">
+                    <li className="  px-1 py-2 products-li ">
                       {" "}
                       <img src={mobile} alt="mobile" /> Mobile Phones
                     </li>
-                    <li className="  px-1 py-2 ">
+                    <li className="  px-1 py-2 products-li ">
                       {" "}
                       <img src={monitor} alt="monitor" /> Laptops & Computers
                     </li>
-                    <li className="  px-1 py-2 ">
+                    <li className="  px-1 py-2 products-li ">
                       {" "}
                       <img src={tabletEReader} alt="tablet" /> Tablets &
                       E-reader
                     </li>
-                    <li className="  px-1 py-2 ">
+                    <li className="  px-1 py-2 products-li ">
                       {" "}
                       <img src={wearables} alt="wearables" /> Wearables
                     </li>
-                    <li className="  px-1 py-2 ">
+                    <li className="  px-1 py-2 products-li ">
                       {" "}
                       <img src={audio} alt="headphone" /> Audio
                     </li>
-                    <li className="  px-1 py-2 ">
+                    <li className="  px-1 py-2 products-li ">
                       {" "}
                       <img src={camera} alt="camera" /> Cameras
                     </li>
-                    <li className="  px-1 py-2 ">
+                    <li className="  px-1 py-2 products-li ">
                       {" "}
                       <img src={gaming} alt="gaming" /> Gaming
                     </li>
-                    <li className="  px-1 py-2 ">
+                    <li className="  px-1 py-2 products-li ">
                       {" "}
                       <img src={network} alt="network" /> Networking
                     </li>
-                    <li className="  px-1 py-2 ">
+                    <li className="  px-1 py-2 products-li ">
                       {" "}
                       <img src={accessories} alt="accessories" /> Accessories
                     </li>
