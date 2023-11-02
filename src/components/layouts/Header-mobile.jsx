@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./header-styles.css";
+
 import Accordion from "react-bootstrap/Accordion";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Container from "react-bootstrap/Container";
@@ -8,14 +10,15 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-import userIcon from "../../../assets/images/icons/user.svg";
-import basketIcon from "../../../assets/images/icons/basket.svg";
-import techHeimLogo from "../../../assets/images/icons/logo.svg";
+import techHeimLogo from "../../assets/images/icons/logo.svg";
+import UserAccountDropdown from "../User-account/UserAccountDropdown";
+import UserBasketComponent from "../UserBasket/UserBasketComponent";
 
 function MobileNavScroll() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -63,9 +66,9 @@ function MobileNavScroll() {
         <Navbar.Brand href="#" className=" fs-1 m-0">
           Tech Heim
         </Navbar.Brand>
-        <div>
-          <img src={userIcon} alt="user icon" />
-          <img src={basketIcon} alt="basket icon" />
+        <div className="d-flex align-content-center justify-content-center">
+          <UserBasketComponent />
+          <UserAccountDropdown />
         </div>
         <Navbar.Collapse id="navbarScroll">
           <Nav
