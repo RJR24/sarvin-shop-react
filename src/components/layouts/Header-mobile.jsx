@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 import "./header-styles.css";
+import UserAccountDropdown from "../User-account/UserAccountDropdown";
+import UserBasketComponent from "../UserBasket/UserBasketComponent";
 
 import Accordion from "react-bootstrap/Accordion";
 import Offcanvas from "react-bootstrap/Offcanvas";
@@ -8,11 +10,17 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 import techHeimLogo from "../../assets/images/icons/logo.svg";
-import UserAccountDropdown from "../User-account/UserAccountDropdown";
-import UserBasketComponent from "../UserBasket/UserBasketComponent";
+import mobile from "../../assets/images/icons/mobile.svg";
+import monitor from "../../assets/images/icons/monitor.svg";
+import tabletEReader from "../../assets/images/icons/tablet-E-reader.svg";
+import wearables from "../../assets/images/icons/wearables.svg";
+import audio from "../../assets/images/icons/audio.svg";
+import camera from "../../assets/images/icons/camera.svg";
+import gaming from "../../assets/images/icons/gaming.svg";
+import network from "../../assets/images/icons/network.svg";
+import accessories from "../../assets/images/icons/accessories.svg";
 
 function MobileNavScroll() {
   const [show, setShow] = useState(false);
@@ -38,29 +46,51 @@ function MobileNavScroll() {
               <Accordion.Item eventKey="0">
                 <Accordion.Header>Products</Accordion.Header>
                 <Accordion.Body className=" d-flex flex-column">
-                  <ul>
-                    <li>Mobile Phones</li>
-                    <li>Laptops & Computers</li>
-                    <li>Tablets & E-reader</li>
-                    <li>Wearables</li>
-                    <li>Audio</li>
-                    <li>Cameras</li>
-                    <li>Gaming</li>
-                    <li>Networking</li>
-                    <li>Accessories</li>
+                  <ul className=" list-unstyled">
+                    <li className="  px-1 py-2 ">
+                      {" "}
+                      <img src={mobile} alt="mobile" /> Mobile Phones
+                    </li>
+                    <li className="  px-1 py-2 ">
+                      {" "}
+                      <img src={monitor} alt="monitor" /> Laptops & Computers
+                    </li>
+                    <li className="  px-1 py-2 ">
+                      {" "}
+                      <img src={tabletEReader} alt="tablet" /> Tablets &
+                      E-reader
+                    </li>
+                    <li className="  px-1 py-2 ">
+                      {" "}
+                      <img src={wearables} alt="wearables" /> Wearables
+                    </li>
+                    <li className="  px-1 py-2 ">
+                      {" "}
+                      <img src={audio} alt="headphone" /> Audio
+                    </li>
+                    <li className="  px-1 py-2 ">
+                      {" "}
+                      <img src={camera} alt="camera" /> Cameras
+                    </li>
+                    <li className="  px-1 py-2 ">
+                      {" "}
+                      <img src={gaming} alt="gaming" /> Gaming
+                    </li>
+                    <li className="  px-1 py-2 ">
+                      {" "}
+                      <img src={network} alt="network" /> Networking
+                    </li>
+                    <li className="  px-1 py-2 ">
+                      {" "}
+                      <img src={accessories} alt="accessories" /> Accessories
+                    </li>
                   </ul>
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
-            <div rel="stylesheet" href="/">
-              Blog
-            </div>
-            <div rel="stylesheet" href="/">
-              FAQ
-            </div>
-            <div rel="stylesheet" href="/">
-              Contact us
-            </div>
+            <div className="mobile-menu-items">Blog</div>
+            <div className="mobile-menu-items">FAQ</div>
+            <div className="mobile-menu-items">Contact us</div>
           </Offcanvas.Body>
         </Offcanvas>
         <Navbar.Brand href="#" className=" fs-1 m-0">
@@ -70,29 +100,6 @@ function MobileNavScroll() {
           <UserBasketComponent />
           <UserAccountDropdown />
         </div>
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
       </Container>
       <Form className="d-flex w-100">
         <Form.Control
