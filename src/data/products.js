@@ -39,7 +39,7 @@ export const PRODUCTS = [
   },
   {
     id:6,
-    productName: "MacBook Pro M2",
+    productName: "MacBook Pro M2 MNEJ3 2022 LLA",
     price: 500,
     productImage: MacBookM2Pro,
   }
