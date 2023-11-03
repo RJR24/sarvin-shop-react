@@ -8,6 +8,8 @@
   --sidebar-gray: #f9f9f9;
   --primary-primary-900: #021736;
   --neutral-gray: #cbcbcb;
+  --neutral-gray-717171: #717171;
+  --neutral-gray-ededed: #ededed;
   --Secondary: #f45e0c;
 }
 
@@ -15,6 +17,9 @@
   color: var(--black);
 }
 .blue-hover-color:hover {
+  color: var(--blue) !important;
+}
+.border-blue-color {
   color: var(--blue) !important;
 }
 .button-primary {
@@ -37,4 +42,10 @@
 }
 .neutral-gray {
   color: var(--neutral-gray);
+}
+.neutral-gray-717171 {
+  color: var(--neutral-gray-717171);
+}
+.neutral-gray-ededed {
+  color: var(--neutral-gray-ededed, #ededed);
 }
