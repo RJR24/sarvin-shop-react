@@ -15,13 +15,13 @@ const Header = () => {
       <div className="mobile-navbar">
         <MobileNavScroll />
       </div>
-      <header className=" header-styles py-3 ">
-        <div className="container d-flex justify-content-between">
+      <header className=" header-styles d-flex  ">
+        <div className=" container d-flex align-items-center  justify-content-between  ">
           <div>
-            <img src={logo} alt="tech heim" width="30px" />
+            <img src={logo} alt="tech heim" width="56px" />
           </div>
-          <nav className="nav gap-4">
-            <Link to="/" className="nav-link text-black blue-hover-color">
+          <nav className="nav nav-items  d-flex align-items-center gap-4">
+            <Link to="/" className=" nav-link text-black blue-hover-color">
               Home
             </Link>
             <div className="">
