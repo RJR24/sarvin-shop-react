@@ -99,18 +99,18 @@ const Footer = () => {
      </div>
 
      <div className="d-block   d-md-none">
-      <div className="bg-black text-white">
-        <p>footer</p>
-        <p>footer</p>
-        <p>footer</p>
-        <p>footer</p>
-        <p>footer</p>
-        <p>footer</p>
-        <p>footer</p>
-        <p>footer</p>
-        <p>footer</p>
-        <p>footer</p>
-        <p>footer</p>
+      <div className="bg-black w-100 text-white">
+        <p className=" w-100">footer</p>
+        <p className=" w-100">footer</p>
+        <p className=" w-100">footer</p>
+        <p className=" w-100">footer</p>
+        <p className=" w-100">footer</p>
+        <p className=" w-100">footer</p>
+        <p className=" w-100">footer</p>
+        <p className=" w-100">footer</p>
+        <p className=" w-100">footer</p>
+        <p className=" w-100">footer</p>
+        <p className=" w-100">footer</p>
        
       </div>
      </div>

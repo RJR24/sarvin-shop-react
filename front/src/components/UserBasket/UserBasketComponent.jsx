@@ -10,13 +10,13 @@ const UserBasketComponent = () => {
   const { totalQty } = useSelector((state) => state.cartReducer);
   return (
     <div className="basket menu-trigger  d-inline-block">
-      <Link to="" className="pe-3 position-relative">
+      <Link to="/cart" className="pe-3 position-relative">
         <img src={basket} alt="basket" />
         <span className="position-absolute bg-danger text-white rounded-circle">
           {totalQty}
         </span>
       </Link>
-      <div className="basket-dropdown  dropdown-menu ">
+      <div className=" basket-dropdown  dropdown-menu ">
         {basketItems.length ? (
           <BasketDropdown />
         ) : (

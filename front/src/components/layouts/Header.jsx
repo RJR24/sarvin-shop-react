@@ -12,10 +12,10 @@ import UserBasketComponent from "../UserBasket/UserBasketComponent";
 const Header = () => {
   return (
     <>
-      <div className="mobile-navbar">
+      <div className="mobile-navbar d-block d-md-none">
         <MobileNavScroll />
       </div>
-      <header className=" header-styles d-flex  ">
+      <header className=" header-styles d-none d-md-flex  ">
         <div className=" container d-flex align-items-center  justify-content-between  ">
           <div>
             <img src={logo} alt="tech heim" width="56px" />

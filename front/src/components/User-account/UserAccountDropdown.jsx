@@ -12,6 +12,7 @@ import logoutIcon from "../../assets/images/icons/logout.svg";
 
 import { login, logout } from "../../redux/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
+import UserLoginRegister from "../UserLoginRegister/UserLoginRegister";
 
 const UserAccountDropdown = () => {
   const [open, setOpen] = useState(false);
@@ -52,12 +53,13 @@ const UserAccountDropdown = () => {
               </ul>
             </div>
           ) : (
-            <div>
-              <button className="btn btn-primary" onClick={userLogin}>
-                Login
-              </button>
-              <button className="btn btn-primary">Register</button>
-            </div>
+            <UserLoginRegister />
+            // <div>
+            //   <button className="btn btn-primary" onClick={userLogin}>
+            //     Login
+            //   </button>
+            //   <button className="btn btn-primary">Register</button>
+            // </div>
           )}
         </div>
       </div>

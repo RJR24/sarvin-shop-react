@@ -10,7 +10,7 @@
 .mobile-logo {
   width: 3rem;
 }
-@media (width <= 768px) {
+/* @media (width <= 768px) {
   .header-styles {
     display: none;
   }
@@ -25,7 +25,7 @@
   .mobile-navbar {
     display: none;
   }
-}
+} */
 .accordion-item:last-of-type .accordion-button.collapsed {
   font-size: 1rem;
   font-weight: 300;
@@ -118,6 +118,10 @@ h3 span {
 .basket-dropdown {
   display: none;
 }
-.basket:hover .basket-dropdown {
-  display: block;
+
+
+@media (min-width: 768px) {
+  .basket:hover .basket-dropdown {
+    display: block;
+  }
 }
