@@ -21,17 +21,17 @@ const BasketItemsCard = ({ productImage, productName }) => {
               {productName}
             </div>
             <div className="color-numbers d-flex flex-column justify-content-between mt-2">
-              <span>blue</span>
-              <span>×1</span>
+              <span className="neutral-gray-717171">blue</span>
+              <span className="neutral-gray-717171">×1</span>
             </div>
           </div>
           <div className="supports mt-2">
             
-            <div>
+            <div className="neutral-gray-717171">
               {" "}
               <img src={freeDelivery} alt="Free Delivery" /> Free Delivery
             </div>
-            <div>
+            <div className="neutral-gray-717171">
               {" "}
               <img src={guaranteed} alt="Guarantee" /> Guaranteed
             </div>
