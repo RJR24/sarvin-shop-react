@@ -1,3 +1,6 @@
+.p-container {
+  margin-top: 5.8em;
+}
 .pro-name {
   /* font-family: Inter; */
   font-size: 20px;
@@ -13,7 +16,20 @@
   padding: 3px 7px;
   color: #ffff;
 }
-
+.payment-container {
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: -2px 2px 15px -1px rgba(113, 113, 113, 0.12);
+}
+.months {
+  border-radius: 4px;
+  /* border: 1px solid var(--neutral-gray-ededed, #EDEDED); */
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 /* .rate-color {
   margin-top: 24px;
 } */
