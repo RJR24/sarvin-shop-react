@@ -11,6 +11,12 @@ import macBookProM201 from "../../assets/images/pro02/macBook-pro-m2/Frame 26086
 import macBookProM202 from "../../assets/images/pro02/macBook-pro-m2/Frame 26086021.png";
 import macBookProM203 from "../../assets/images/pro02/macBook-pro-m2/Frame 26086022.png";
 import macBookProM204 from "../../assets/images/pro02/macBook-pro-m2/Frame 26086048.png";
+import arrowRight from "../../assets/images/arrows-btn-etc/arrow-circle-right.svg";
+import discountIcon from "../../assets/images/icons/discount.svg";
+import threeMonths from "../../assets/images/icons/3-months.svg";
+import sixMonths from "../../assets/images/icons/6-months.svg";
+import twelveMonths from "../../assets/images/icons/12-months.svg";
+import eighteenMonths from "../../assets/images/icons/18-months.svg";
 
 import star from "../../assets/images/icons/star.svg";
 import guaranteed from "../../assets/images/icons/guaranteed.svg";
@@ -23,8 +29,8 @@ const Product = () => {
     dispatcher(addToBasket({ basket: PRODUCTS[5] }));
   };
   return (
-    <div className=" row container">
-      <div className="col-md-5 bg-danger  product-div">
+    <div className=" row p-container">
+      <div className="col-md-5 product-div">
         <div className="product-image">
           <img
             src={PRODUCTS[5].productImage}
@@ -47,7 +53,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div className="col-md-4 bg-warning-subtle specifications">
+      <div className="col-md-4 specifications">
         <div className="sTop d-flex justify-content-start flex-column gap-2">
           <div className="pro-name">
             {PRODUCTS[5].productName} MNEJ3 2022 LLA {<br />} 13.3 inch
@@ -78,35 +84,99 @@ const Product = () => {
             </div>
           </div>
         </div>
-        <div className="sBottom">
-          <div>
-            <span>Brand</span>
-            <span>Apple</span>
-          </div>
-          <div>
-            <span>Model Name</span>MacBook Pro<span></span>
-          </div>
-          <div>
-            <span>Screen Size</span>
-            <span>13.3 Inches</span>
-          </div>
-          <div>
-            <span>Storage Size</span>
-            <span>256 GB</span>
-          </div>
-          <div>
-            <span>CPU Model</span>
-            <span>Core i5</span>
+        <div className="product-info">
+          <div className=" d-flex flex-column justify-content-between ">
+            <div className="d-flex">
+              <span className=" col-6">Brand</span>
+              <span className=" col-4">Apple</span>
+            </div>
+            <div className="d-flex">
+              <span className=" col-6">Model Name </span>
+              <span className=" col-4">MacBook Pro</span>
+            </div>
+            <div className="d-flex">
+              <span className=" col-6">Screen Size</span>
+              <span className=" col-4">13.3 Inches</span>
+            </div>
+            <div className="d-flex">
+              <span className=" col-6">Storage Size</span>
+              <span className=" col-4">256 GB</span>
+            </div>
+            <div className="d-flex">
+              <span className=" col-6">CPU Model</span>
+              <span className=" col-4">Core i5</span>
+            </div>
+            <div style={{ color: "#0C68F4" }}>
+              show more{" "}
+              <img
+                src={arrowRight}
+                alt="arrow to right"
+                style={{ color: "#0C68F4" }}
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className="col-md-3 bg-danger-subtle price">
-        <div></div>
-        <div></div>
-        <div>
-          <button className="btn btn-primary" onClick={addToCart}>
-            add to cart
-          </button>
+      <div className="price col-md-3 d-flex flex-column">
+        <div className="price-payment">
+          <div className=" payment-container d-flex flex-column ">
+            <div className="price-discount">
+              <div className="discount d-flex justify-content-between">
+                <div>$ 1299.00</div>
+                <div>
+                  {" "}
+                  <img src={discountIcon} alt="discountIcon" />
+                  -12%
+                </div>
+              </div>
+              <div className="last-price">
+                <span>last price</span> <span>$ 1410,87</span>
+              </div>
+            </div>
+            <div className="payment-method d-flex flex-column w-100">
+              <input
+                type="radio"
+                name="dark"
+                id="dark"
+                value="dark"
+                // onChange={onChange}
+                checked={true}
+              />
+              <input
+                type="radio"
+                name="Pay Now"
+                id="dark"
+                value="dark"
+                // onChange={onChange}
+                checked={true}
+              />
+              <div className="installments row gap-2 d-flex justify-content-between">
+                <div className="col-2 months">
+                  <img src={threeMonths} alt="" />
+                </div>
+                <div className="col-2 months">
+                  {" "}
+                  <img src={sixMonths} alt="" />
+                </div>
+                <div className="col-2 months">
+                  {" "}
+                  <img src={twelveMonths} alt="" />{" "}
+                </div>
+                <div className="col-2 months">
+                  {" "}
+                  <img src={eighteenMonths} alt="" />{" "}
+                </div>
+              </div>
+              <div className="monthly-payment">$433.00/ month</div>
+            </div>
+
+            <div className="purchase d-flex flex-column gap-2 mt-2">
+              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-outline-primary" onClick={addToCart}>
+                add to cart
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
