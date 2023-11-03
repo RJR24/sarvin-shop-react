@@ -1,5 +1,11 @@
+.nav-items {
+  min-height: 100px;
+}
 .header-styles {
-  min-height: 73px;
+  /* min-height: 100px; */
+  margin-bottom: 0.1em;
+  border-bottom: 1px solid
+    var(--gradient-linear-stroke-bottom, rgba(12, 104, 244, 0.3));
 }
 .mobile-logo {
   width: 3rem;
@@ -115,20 +121,3 @@ h3 span {
 .basket:hover .basket-dropdown {
   display: block;
 }
-
-/* .company-name:hover.company-name{
-color: aqua;
-} */
-/* .company-name:hover{
-  color: aqua;
-  } */
-
-/* header:hover nav{
-background-color: red;
-} */
-
-/* .cartItems {
-  width: 20rem;
-  height: 25rem;
-  background-color: blue;
-} */
