@@ -21,8 +21,6 @@
 .company-name {
   color: var(--primary-primary-700, #042352);
 
-  /* Web/Display1 */
-  /* font-family: Inter; */
   font-size: 4rem;
   font-style: normal;
   font-weight: 600;
@@ -30,8 +28,6 @@
 }
 .company-slogan {
   display: flex;
-  /* Web/H3 */
-  /* font-family: Inter; */
   gap: 0.5rem;
   font-size: 2rem;
 }

@@ -26,11 +26,11 @@ import shop from "../../assets/images/icons/shop.svg";
 const Product = () => {
   const dispatcher = useDispatch();
   const addToCart = () => {
-    dispatcher(addToBasket({ basket: PRODUCTS[5] }));
+    dispatcher(addToBasket({ basket: PRODUCTS[3] }));
   };
   return (
     <div className=" row p-container">
-      <div className="col-md-5 product-div">
+      <div className="col-5 product-div">
         <div className="product-image">
           <img
             src={PRODUCTS[5].productImage}
@@ -53,10 +53,10 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div className="col-md-4 specifications">
+      <div className="col-4 specifications">
         <div className="sTop d-flex justify-content-start flex-column gap-2">
           <div className="pro-name">
-            {PRODUCTS[5].productName} MNEJ3 2022 LLA {<br />} 13.3 inch
+            {PRODUCTS[3].productName} MNEJ3 2022 LLA {<br />} 13.3 inch
           </div>
           <div className="rate-color d-flex justify-content-start flex-column gap-4">
             <div>
@@ -117,7 +117,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div className="price col-md-3 d-flex flex-column">
+      <div className="price col-3 d-flex flex-column">
         <div className="price-payment">
           <div className=" payment-container d-flex flex-column ">
             <div className="price-discount">
@@ -129,40 +129,52 @@ const Product = () => {
                   -12%
                 </div>
               </div>
-              <div className="last-price">
+              <div className="last-price neutral-gray-717171 fw-lighter">
                 <span>last price</span> <span>$ 1410,87</span>
               </div>
             </div>
             <div className="payment-method d-flex flex-column w-100">
-              <input
-                type="radio"
-                name="dark"
-                id="dark"
-                value="dark"
-                // onChange={onChange}
-                checked={true}
-              />
-              <input
-                type="radio"
-                name="Pay Now"
-                id="dark"
-                value="dark"
-                // onChange={onChange}
-                checked={true}
-              />
-              <div className="installments row gap-2 d-flex justify-content-between">
-                <div className="col-2 months">
+              <div className=" mt- d-flex flex-column">
+                <div className=" d-flex flex-start align-items-center gap-1">
+                  <label htmlFor="">
+                    <input
+                      type="radio"
+                      name="Pay Now"
+                      id="dark"
+                      value="dark"
+                      // onChange={onChange}
+                      checked={true}
+                    />
+                    Pay Now
+                  </label>
+                </div>
+                <div className=" d-flex flex-start align-items-center">
+                  <label htmlFor="">
+                    <input
+                      type="radio"
+                      name="dark"
+                      id="dark"
+                      value="dark"
+                      // onChange={onChange}
+                      checked={true}
+                    />
+                    Buy in installments
+                  </label>
+                </div>
+              </div>
+              <div className="installments row d-flex justify-content-between">
+                <div className="col-3 months">
                   <img src={threeMonths} alt="" />
                 </div>
-                <div className="col-2 months">
+                <div className="col-3 months">
                   {" "}
                   <img src={sixMonths} alt="" />
                 </div>
-                <div className="col-2 months">
+                <div className="col-3 months">
                   {" "}
                   <img src={twelveMonths} alt="" />{" "}
                 </div>
-                <div className="col-2 months">
+                <div className="col-3 months">
                   {" "}
                   <img src={eighteenMonths} alt="" />{" "}
                 </div>

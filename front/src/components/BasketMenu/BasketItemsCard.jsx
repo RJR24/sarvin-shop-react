@@ -11,13 +11,12 @@ const BasketItemsCard = ({ productImage, productName }) => {
   return (
     <>
       <div className="itemsList mt-2 mb-1 d-flex justify-content-start px-2 py-1 gap-2">
-        <div className="product-image d-flex align-items-center justify-content-center">
+        <div className="product-img d-flex align-items-center justify-content-center">
           <img className=" w-100" src={productImage} alt="{productName}" />
         </div>
         <div className="product-details">
           <div>
             <div className="model-name">
-              {/* Inateck 12.3-13 Inch MacBook Case Sleeve */}
               {productName}
             </div>
             <div className="color-numbers d-flex flex-column justify-content-between mt-2">
