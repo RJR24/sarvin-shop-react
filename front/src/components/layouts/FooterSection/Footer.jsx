@@ -20,7 +20,10 @@ const Footer = () => {
     <>
      <div className="d-none d-md-block">
      <div className="footer-container">
-        <div class=" footer-info d-flex justify-content-around">
+      <div className=" container">
+    
+
+        <div class=" footer-info neutral-gray d-flex justify-content-between">
           <div className="footer-section1">
             <div className="c-title">Company</div>
             <span>about us</span>
@@ -64,7 +67,7 @@ const Footer = () => {
           <div className="footer-section4 ">
             <div className="c-title">Sign up for News and updates</div>
             <div>
-              <input type="text" placeholder="E-mail Address"  />
+              <input className="E-address" type="text" placeholder="E-mail Address"  />
               
             </div>
             <div className="social-media d-flex ">
@@ -75,27 +78,30 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="payment-method">
+        <div className="acceptable-payment-cards">
           <img src={payPal} alt="payPal sign" />
           <img src={amex} alt="american express sign" />
           <img src={visaCard} alt="visa card sign" />
           <img src={masterCard} alt="master card sign" />
         </div>
-      </div>
-      <div className=" d-flex justify-content-between policy">
-        <div className="d-flex col-2">
+        <div className="policy d-flex justify-content-between ">
+        <div className="d-flex col-2 neutral-gray-cbcbcb">
           <span>
             {" "}
             <img src={copyRight} alt="" /> 2023 Tech Heim.{" "}
           </span>
         </div>
-        <div className="right-side d-flex ">
+        <div className="right-side d-flex neutral-gray-cbcbcb">
           <span>cookie settings</span>
           <span>Privacy Policy</span>
           <span>Terms and Conditions </span>
           <span>Imprint</span>
         </div>
       </div>
+        </div>
+      </div>
+
+      
      </div>
 
      <div className="d-block   d-md-none">

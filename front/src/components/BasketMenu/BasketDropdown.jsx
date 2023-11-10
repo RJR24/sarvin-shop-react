@@ -8,6 +8,7 @@ import checkoutTrolley from "../../assets/images/icons/checkout-trolley.svg";
 
 const BasketDropdown = () => {
   const { basket, totalQty } = useSelector((state) => state.cartReducer);
+  console.log(basket);
   return (
     <>
       <div className="itemsNumber">{totalQty} items</div>
