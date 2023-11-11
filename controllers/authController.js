@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require("../models/userModel");
 
 const signUp = async (req, res) => {
   try {
@@ -11,7 +11,21 @@ const signUp = async (req, res) => {
 
     return res.status(201).send(user);
   } catch (error) {
-    return res.status(500).send("internal server error!"+error);
+    return res.status(500).send("internal server error!" + error);
+  }
+};
+const GetAllUsers = async (req, res) => {
+  try {
+    const { email, password, username } = req.body;
+    const user = await User.create({
+      email,
+      password,
+      username,
+    });
+
+    return res.status(201).send(user);
+  } catch (error) {
+    return res.status(500).send("internal server error!" + error);
   }
 };
 
@@ -49,7 +63,7 @@ const removeProduct = (req, res) => {
 
 module.exports = {
   signUp,
-  createProduct,
-  updateProduct,
-  removeProduct,
+  // createProduct,
+  // updateProduct,
+  // removeProduct,
 };
