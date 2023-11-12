@@ -10,7 +10,7 @@ const User = sq.define(
       autoIncrement: true,
       allowNull: false,
     },
-    username: {
+    fullName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -41,6 +41,10 @@ const User = sq.define(
           msg: "Password must be at least 5 characters long.",
         },
       },
+    },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
     },
   },
   {

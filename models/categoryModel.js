@@ -19,17 +19,11 @@ const Category = sq.define(
     description: {
       type: DataTypes.TEXT,
     },
-    // parentId: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "Category",
-    //     key: "id",
-    //   },
-    // },
-    permissions: {
-      type: DataTypes.STRING,
-    },
   },
+  // parentId: {
+  //   type: DataTypes.INTEGER,
+  //   allowNull: true,
+  // },
   {
     hooks: {
       beforeValidate: () => {},

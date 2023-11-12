@@ -1,11 +1,11 @@
 const express = require("express");
-const { signUp } = require("../controllers/authController");
-
+const { signUp, login, logout } = require("../controllers/authController");
 
 const authRouter = express.Router();
 
 authRouter.post("/signUp", signUp);
-// authRouter.post("/login", createProduct);
+authRouter.post("/login", login);
+authRouter.post("/logout", logout);
 // authRouter.put("/forgotPassword", updateProduct);
 // authRouter.delete("/changePassword", removeProduct);
 
