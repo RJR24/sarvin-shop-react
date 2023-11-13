@@ -10,7 +10,7 @@ import wishList from "../../assets/images/icons/wishList.svg";
 import payments from "../../assets/images/icons/payments.svg";
 import logoutIcon from "../../assets/images/icons/logout.svg";
 
-import { login, logout } from "../../redux/slices/userSlice";
+import { login, logout, setRegisterModal } from "../../redux/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import UserLoginRegister from "../UserLoginRegister/UserLoginRegister";
 
@@ -30,14 +30,16 @@ const UserAccountDropdown = () => {
         }`}
         onClick={() => {
           setOpen(!open);
+          if (!username) {
+            dispatcher(setRegisterModal());
+          }
         }}
       >
-        <Link to="">
+        <span>
           <img src={user} alt="user" />
-        </Link>
-
-        <div className="dropdown-menu">
-          {username ? (
+        </span>
+        {username ? (
+          <div className="dropdown-menu">
             <div>
               <h3>
                 {username}
@@ -52,16 +54,12 @@ const UserAccountDropdown = () => {
                 <DropdownItem img={logoutIcon} text={"Log Out"} event={true} />
               </ul>
             </div>
-          ) : (
-            <UserLoginRegister />
-            // <div>
-            //   <button className="btn btn-primary" onClick={userLogin}>
-            //     Login
-            //   </button>
-            //   <button className="btn btn-primary">Register</button>
-            // </div>
-          )}
-        </div>
+            )
+          </div>
+        ) : (
+          
+          <UserLoginRegister />
+        )}
       </div>
     </div>
   );
