@@ -1,9 +1,17 @@
 const express = require("express");
 const productRouter = require("./routes/productRouter");
+const authRouter = require("./routes/authRouter");
+const categoryRouter = require("./routes/categoryRouter");
+const userRouter = require("./routes/userRouter");
+
 const app = express();
 require("dotenv").config();
 
+app.use(express.json());
 app.use(productRouter);
+app.use(categoryRouter);
+app.use(authRouter);
+app.use(userRouter);
 
 app.get("/", (req, res) => {
   res.send("root route");

@@ -1,107 +1,62 @@
-const getAllProducts = (req, res) => {
-  const productsList = [
-    {
-      id: 1,
-      title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      price: 109.95,
-      description:
-        "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      category: "men's clothing",
-      image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      rating: {
-        rate: 3.9,
-        count: 120,
-      },
-    },
-    {
-      id: 2,
-      title: "Mens Casual Premium Slim Fit T-Shirts ",
-      price: 22.3,
-      description:
-        "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-      category: "men's clothing",
-      image:
-        "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-      rating: {
-        rate: 4.1,
-        count: 259,
-      },
-    },
-    {
-      id: 3,
-      title: "Mens Cotton Jacket",
-      price: 55.99,
-      description:
-        "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-      category: "men's clothing",
-      image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      rating: {
-        rate: 4.7,
-        count: 500,
-      },
-    },
-    {
-      id: 4,
-      title: "Mens Casual Slim Fit",
-      price: 15.99,
-      description:
-        "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-      category: "men's clothing",
-      image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-      rating: {
-        rate: 2.1,
-        count: 430,
-      },
-    },
-    {
-      id: 5,
-      title:
-        "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-      price: 695,
-      description:
-        "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-      category: "jewelery",
-      image: "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
-      rating: {
-        rate: 4.6,
-        count: 400,
-      },
-    },
-  ];
-  res.send(productsList);
+const User = require("../models/userModel");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+// const tokenBlacklist = require("./tokenBlackList");
+const TokenBlackList = require("../models/tokenBlackList");
+
+
+const signUp = async (req, res) => {
+  try {
+    const { email, password, fullName } = req.body;
+    const existingUser = await User.findOne({ where: { email } });
+    if (existingUser) {
+      return res.status(400).send("user with the given email already exist!");
+    }
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = await User.create({
+      email,
+      password: hashedPassword,
+      fullName,
+    });
+
+    return res.status(201).send(newUser);
+  } catch (error) {
+    return res.status(500).send("internal server error!" + error);
+  }
 };
-
-const createProduct = (req, res) => {
-  const newProduct = {
-    id: 6,
-    title: "mobile",
-    price: 109.95,
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    category: "men's clothing",
-    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
-  };
-
-  res.send({ message: "product created successfully!", newProduct });
+const login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ where: { email } });
+    if (!user || !(await bcrypt.compare(password, user.password))) {
+      return res.status(401).send("invalid email or password!");
+    }
+    const token = jwt.sign(
+      { userId: user.id, email: user.email },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1h",
+      }
+    );
+    return res.status(200).send("user logged in successfully!" + token);
+  } catch (error) {
+    return res.status(500).send("internal server error!" + error);
+  }
 };
+const logout = async (req, res) => {
+  const token = req.header("x-auth-token");
 
-const updateProduct = (req, res) => {
-  const updatedProduct = {
-    id: 6,
-    title: "mobile",
-    price: 100,
-  };
+  if (!token) {
+    return res.status(401).send("No token provided!");
+  }
 
-  res.send({ message: "product updated successfully!", updatedProduct });
+  // Add the token to the blacklist
+  await TokenBlackList.create({token});
+
+  return res.status(200).send("user logged out successfully!");
 };
-
-const removeProduct = (req, res) => {
-  res.send({ message: "product deleted successfully!" });
+module.exports = {
+  signUp,
+  login,
+  logout,
 };
-
-
-module.exports = { getAllProducts, createProduct, updateProduct, removeProduct}

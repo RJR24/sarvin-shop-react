@@ -1,11 +1,13 @@
 const express = require("express");
-const router = express.Router();
+const { isLoggedIn, isAdmin } = require("../middlewares/auth");
+const {
+  getUserProfile,
+  updateUserProfile,
+} = require("../controllers/userController");
 
+const userRouter = express.Router();
 
-router.use("/auth", authRouter);
+userRouter.put("/profile", isLoggedIn, updateUserProfile);
+userRouter.get("/profile", isLoggedIn, getUserProfile);
 
-router.use("/user", isLoggedIn, userRouter);
-router.use("/admin", isLoggedIn, isAdmin, adminRouter);
-
-
-module.exports = router;
+module.exports = userRouter;
