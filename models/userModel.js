@@ -44,7 +44,7 @@ const User = sq.define(
     },
     isAdmin: {
       type: DataTypes.BOOLEAN,
-      defaultValue: true,
+      defaultValue: false,
     },
   },
   {

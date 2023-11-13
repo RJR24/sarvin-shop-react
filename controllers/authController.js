@@ -1,8 +1,8 @@
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const tokenBlacklist = require("./tokenBlackList");
 
-const tokenBlacklist = [];
 const signUp = async (req, res) => {
   try {
     const { email, password, fullName } = req.body;

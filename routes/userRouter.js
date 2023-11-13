@@ -1,10 +1,13 @@
 const express = require("express");
 const { isLoggedIn, isAdmin } = require("../middlewares/auth");
-const userDashboard = require("../controllers/userController");
-const router = express.Router();
+const {
+  getUserProfile,
+  updateUserProfile,
+} = require("../controllers/userController");
 
-router.use("/userDashboard", isLoggedIn, userDashboard);
-// router.use("/", );
-// router.use("/", isLoggedIn, isAdmin, adminRouter);
+const userRouter = express.Router();
 
-module.exports = router;
+userRouter.put("/profile", isLoggedIn, updateUserProfile);
+userRouter.get("/profile", isLoggedIn, getUserProfile);
+
+module.exports = userRouter;
