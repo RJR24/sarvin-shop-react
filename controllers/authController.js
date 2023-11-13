@@ -1,7 +1,9 @@
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const tokenBlacklist = require("./tokenBlackList");
+// const tokenBlacklist = require("./tokenBlackList");
+const TokenBlackList = require("../models/tokenBlackList");
+
 
 const signUp = async (req, res) => {
   try {
@@ -41,7 +43,7 @@ const login = async (req, res) => {
     return res.status(500).send("internal server error!" + error);
   }
 };
-const logout = (req, res) => {
+const logout = async (req, res) => {
   const token = req.header("x-auth-token");
 
   if (!token) {
@@ -49,7 +51,7 @@ const logout = (req, res) => {
   }
 
   // Add the token to the blacklist
-  tokenBlacklist.push(token);
+  await TokenBlackList.create({token});
 
   return res.status(200).send("user logged out successfully!");
 };

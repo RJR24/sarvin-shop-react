@@ -55,8 +55,6 @@ const User = sq.define(
   }
 );
 
-sq.sync({ force: true }).then(() => {
-  console.log("Tables have been created");
-});
+
 
 module.exports = User;

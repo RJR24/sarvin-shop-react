@@ -31,8 +31,17 @@ const updateUserProfile = async (req, res) => {
       return res.status(404).send("User not found");
     }
 
+    const duplicateEmail = await User.findOne({
+      where:{ email }
+    })
+
+    if (duplicateEmail) {
+      return res.status(400).send("this email is already registered!")
+    }
     user.fullName = fullName || user.fullName;
     user.email = email || user.email;
+
+
 
     await user.save();
 

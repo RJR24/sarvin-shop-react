@@ -61,8 +61,6 @@ const Product = sq.define(
   }
 );
 
-sq.sync().then(() => {
-  console.log("Tables have been created");
-});
+
 
 module.exports = Product;

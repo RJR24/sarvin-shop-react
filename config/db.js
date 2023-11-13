@@ -9,5 +9,8 @@ sq.authenticate().then(() => {
 }).catch((error) => {
   console.error('Unable to connect to the database:', error);
 });
+// sq.sync().then(() => {
+//   console.log("Tables have been created");
+// });
 
 module.exports = sq
