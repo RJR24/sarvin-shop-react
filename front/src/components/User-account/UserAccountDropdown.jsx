@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../layouts/header-styles.css";
 
 import user from "../../assets/images/icons/user.svg";
@@ -14,31 +14,45 @@ import { login, logout, setRegisterModal } from "../../redux/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import UserLoginRegister from "../UserLoginRegister/UserLoginRegister";
 
+// const userIsLoggedIn = ()=>{
+//     if (!username){
+
+//     }
+// }
+
 const UserAccountDropdown = () => {
   const [open, setOpen] = useState(false);
   const username = useSelector((state) => state.userReducer.username);
+  const isLogin = useSelector((state) => state.userReducer.isLogin);
   const dispatcher = useDispatch();
-  const userLogin = () => {
-    dispatcher(login({ username: "Kaveh024" }));
+  // const userLogin = () => {
+  //   dispatcher(login({ username: "Kaveh024" }));
+  // };
+  const userLogout = () => {
+    dispatcher(logout());
+  };
+  const handleIconClick = () => {
+    if (isLogin) {
+      setOpen(!open);
+    } else {
+      dispatcher(setRegisterModal());
+    }
+  };
+  const closeDropdown = () => {
+    setOpen(false);
   };
 
   return (
-    <div>
+    <div onMouseLeave={closeDropdown}>
       <div
         className={`menu-trigger  d-inline ${
-          open ? "userActive" : "userInactive"
+          isLogin ? "userActive" : "userInactive"
         }`}
-        onClick={() => {
-          setOpen(!open);
-          if (!username) {
-            dispatcher(setRegisterModal());
-          }
-        }}
       >
-        <span>
+        <span onClick={handleIconClick}>
           <img src={user} alt="user" />
         </span>
-        {username ? (
+        {isLogin && open && (
           <div className="dropdown-menu">
             <div>
               <h3>
@@ -51,16 +65,17 @@ const UserAccountDropdown = () => {
                 <DropdownItem img={orders} text={"Orders"} />
                 <DropdownItem img={wishList} text={"Wish List"} />
                 <DropdownItem img={payments} text={"Payments"} />
-                <DropdownItem img={logoutIcon} text={"Log Out"} event={true} />
+                <DropdownItem
+                  img={logoutIcon}
+                  text={"Log Out"}
+                  onClick={userLogout}
+                />
               </ul>
             </div>
-            )
           </div>
-        ) : (
-          
-          <UserLoginRegister />
         )}
       </div>
+      {!isLogin && <UserLoginRegister />}
     </div>
   );
 };
