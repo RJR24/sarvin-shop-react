@@ -12,6 +12,7 @@
   --neutral-gray-ededed: #ededed;
   --neutral-gray-cbcbcb: #cbcbcb;
   --Secondary: #f45e0c;
+  --primary50: #aecdfb;
 }
 
 .text-black {
@@ -48,8 +49,11 @@
   color: var(--neutral-gray-717171);
 }
 .neutral-gray-ededed {
-  color: var(--neutral-gray-ededed, #ededed);
+  color: var(--neutral-gray-ededed);
 }
 .neutral-gray-cbcbcb {
   color: var(--neutral-gray-cbcbcb, #cbcbcb);
+}
+.primary-50 {
+  color: var(--primary50);
 }
