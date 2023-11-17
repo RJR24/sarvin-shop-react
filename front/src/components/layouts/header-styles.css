@@ -54,13 +54,16 @@
 }
 .dropdown-menu {
   position: absolute;
-  top: 3.5rem;
+  top: 4rem;
   right: 5%;
   background-color: #ffff;
   border-radius: 8px;
-  padding: 10px 1.2rem;
+  padding: .8rem 1.2rem;
   width: 40%;
-  min-width: 22.5em;
+  min-width: 22.5rem;
+  max-width: 34.5rem;
+  max-height: 40rem;
+  overflow-y: scroll ;
 }
 .dropdown-menu::before {
   content: "";

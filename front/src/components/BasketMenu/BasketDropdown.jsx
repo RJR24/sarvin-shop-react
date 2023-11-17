@@ -11,7 +11,8 @@ const BasketDropdown = () => {
   console.log(basket);
   return (
     <>
-      <div className="itemsNumber">{totalQty} items</div>
+     <div className=" basket-main-container">
+     <div className="itemsNumber">{totalQty} items</div>
       <div className="cartItems d-flex justify-content-center">
         <div className="items-container align-items-center">
           {basket.map((item) => (
@@ -31,6 +32,7 @@ const BasketDropdown = () => {
           </button>
         </div>
       </div>
+     </div>
     </>
   );
 };

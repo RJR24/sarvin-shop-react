@@ -77,14 +77,21 @@
   color: #ffffff;
   border: none;
 }
-.accordion-button {
+.accordion-item button {
   background-color: var(--primary-primary-900) !important;
   color: #ffffff;
   border-radius: 4px !important;
 }
-.accordion-header {
+.accordion-item button::after {
+  color: #ffffff;
+}
+.footer-accordion-header {
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: 1.5rem;
+}
+.footer-cards-social .cards {
+  gap: 0.25rem;
+  width: 2rem;
 }

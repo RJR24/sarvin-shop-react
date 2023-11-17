@@ -4,9 +4,13 @@ import Accordion from "react-bootstrap/Accordion";
 import "./footer-styles.css";
 
 import facebookIcon from "../../../assets/images/icons/facebook.svg";
+import facebookIconMobile from "../../../assets/images/icons/facebook-icon-mobile.svg";
 import twitterIcon from "../../../assets/images/icons/twitter.svg";
+import twitterIconMobile from "../../../assets/images/icons/twitter-icon-mobile.svg";
 import instagramIcon from "../../../assets/images/icons/instagram.svg";
+import instagramIconMobile from "../../../assets/images/icons/instagram-icon-mobile.svg";
 import youtubeIcon from "../../../assets/images/icons/youtube.svg";
+import youtubeIconMobile from "../../../assets/images/icons/youtube-icon-mobile.svg";
 import masterCard from "../../../assets/images/icons/masterCard.svg";
 import visaCard from "../../../assets/images/icons/Visa.svg";
 import payPal from "../../../assets/images/icons/payPal.svg";
@@ -82,7 +86,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="acceptable-payment-cards">
+            <div className="acceptable-payment-cards d-flex">
               <img src={payPal} alt="payPal sign" />
               <img src={amex} alt="american express sign" />
               <img src={visaCard} alt="visa card sign" />
@@ -133,7 +137,7 @@ const Footer = () => {
               <div className="company-accordion">
                 <Accordion>
                   <Accordion.Item eventKey="0">
-                    <Accordion.Header className="accordion-header">Company </Accordion.Header>
+                    <Accordion.Header className="footer-accordion-header">Company </Accordion.Header>
                     <Accordion.Body className=" d-flex flex-column">
                       <ul className=" list-unstyled">
                         <li className=" ">
@@ -152,7 +156,7 @@ const Footer = () => {
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1">
-                    <Accordion.Header className="accordion-header">Info</Accordion.Header>
+                    <Accordion.Header className="footer-accordion-header">Info</Accordion.Header>
                     <Accordion.Body className=" d-flex flex-column">
                       <ul className=" list-unstyled">
                         <li className=" ">
@@ -168,7 +172,7 @@ const Footer = () => {
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="2">
-                    <Accordion.Header className="accordion-header">Contact us</Accordion.Header>
+                    <Accordion.Header className="footer-accordion-header">Contact us</Accordion.Header>
                     <Accordion.Body className=" d-flex flex-column">
                       <ul className=" list-unstyled">
                         <li className=" ">
@@ -190,18 +194,18 @@ const Footer = () => {
               <div className="info-accordion"></div>
               <div className="contactUs-accordion"></div>
             </div>
-            <div className="footer-cards-social container d-flex justify-content-between align-items-center ">
-              <div className="cards d-flex gap-2 ">
+            <div className="footer-cards-social container d-flex justify-content-between align-items-center py-2">
+              <div className="cards d-flex  ">
                 <img src={payPal} alt="payPal" />
                 <img src={amex} alt="American express card" />
                 <img src={visaCard} alt="Visa card" />
                 <img src={masterCard} alt="Master card" />
               </div>
               <div className="social d-flex gap-2">
-                <img src={facebookIcon} alt="facebook" />
-                <img src={twitterIcon} alt="twitter" />
-                <img src={instagramIcon} alt="instagram" />
-                <img src={youtubeIcon} alt="youtube" />
+                <img src={facebookIconMobile} alt="facebook" />
+                <img src={twitterIconMobile} alt="twitter" />
+                <img src={instagramIconMobile} alt="instagram" />
+                <img src={youtubeIconMobile} alt="youtube" />
               </div>
             </div>
           </div>
