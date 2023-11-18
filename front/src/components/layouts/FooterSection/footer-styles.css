@@ -72,18 +72,30 @@
 }
 
 /* For the small screen accordion */
+.footer-dropdowns {
+  padding: 1rem 1.5rem;
+  padding-bottom: 0;
+}
 .footer-dropdowns .accordion-item {
   background-color: var(--primary-primary-900) !important;
   color: #ffffff;
   border: none;
 }
-.accordion-item button {
+.footer-container .accordion-item button {
   background-color: var(--primary-primary-900) !important;
   color: #ffffff;
   border-radius: 4px !important;
+  padding: 0.5rem 0 !important;
 }
-.accordion-item button::after {
-  color: #ffffff;
+/* .footer-container .accordion-item button :hover {
+  border: none imo !important;
+} */
+.footer-container .accordion-item button::after {
+  filter: brightness(0) invert(1);
+}
+.footer-container .accordion-item:last-of-type .accordion-button.collapsed {
+  color: #ffffff !important;
+  font-weight: 400;
 }
 .footer-accordion-header {
   font-size: 1rem;
@@ -94,4 +106,7 @@
 .footer-cards-social .cards {
   gap: 0.25rem;
   width: 2rem;
+}
+.signUp-span {
+  margin-bottom: 0.75rem;
 }

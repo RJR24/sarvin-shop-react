@@ -113,8 +113,8 @@ const Footer = () => {
       <div className="d-block footer-container d-md-none">
         <div className=" w-100 text-white">
           <div className="footer-main-container">
-            <div className="footer-dropdowns container">
-              <div className="chat-arrowUp d-flex align-items-center justify-content-between mt-3">
+            <div className="footer-dropdowns d-flex flex-column gap-3">
+              <div className="chat-arrowUp d-flex align-items-center justify-content-between">
                 <div className="chat d-flex justify-content-center align-items-center">
                   <img src={questionMark} alt="" />
                 </div>
@@ -122,9 +122,9 @@ const Footer = () => {
                   <img src={arrowUp} alt="" />
                 </div>
               </div>
-              <div className="news-updates d-flex flex-start ">
-                <div className="d-flex flex-column p-1 gap-2 align-items-center justify-content-center w-100">
-                  <span className="d-flex justify-content-start">
+              <div className="news-updates px-2 py-2  d-flex flex-start ">
+                <div className="d-flex flex-column p-1 justify-content-center w-100">
+                  <span className=" signUp-span d-flex justify-content-start">
                     Sign up for News and updates
                   </span>
                   <input
@@ -137,7 +137,9 @@ const Footer = () => {
               <div className="company-accordion">
                 <Accordion>
                   <Accordion.Item eventKey="0">
-                    <Accordion.Header className="footer-accordion-header">Company </Accordion.Header>
+                    <Accordion.Header className="footer-accordion-header">
+                      Company{" "}
+                    </Accordion.Header>
                     <Accordion.Body className=" d-flex flex-column">
                       <ul className=" list-unstyled">
                         <li className=" ">
@@ -156,7 +158,9 @@ const Footer = () => {
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1">
-                    <Accordion.Header className="footer-accordion-header">Info</Accordion.Header>
+                    <Accordion.Header className="footer-accordion-header">
+                      Info
+                    </Accordion.Header>
                     <Accordion.Body className=" d-flex flex-column">
                       <ul className=" list-unstyled">
                         <li className=" ">
@@ -172,7 +176,9 @@ const Footer = () => {
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="2">
-                    <Accordion.Header className="footer-accordion-header">Contact us</Accordion.Header>
+                    <Accordion.Header className="footer-accordion-header">
+                      Contact us
+                    </Accordion.Header>
                     <Accordion.Body className=" d-flex flex-column">
                       <ul className=" list-unstyled">
                         <li className=" ">
@@ -191,11 +197,10 @@ const Footer = () => {
                   </Accordion.Item>
                 </Accordion>
               </div>
-              <div className="info-accordion"></div>
               <div className="contactUs-accordion"></div>
             </div>
             <div className="footer-cards-social container d-flex justify-content-between align-items-center py-2">
-              <div className="cards d-flex  ">
+              <div className="cards d-flex ">
                 <img src={payPal} alt="payPal" />
                 <img src={amex} alt="American express card" />
                 <img src={visaCard} alt="Visa card" />
