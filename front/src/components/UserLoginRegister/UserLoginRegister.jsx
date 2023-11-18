@@ -1,10 +1,11 @@
+import React from "react";
 import Modal from "react-bootstrap/Modal";
 import { setRegisterModal } from "../../redux/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import "./userLoginRegister.css";
 import facebook from "../../assets/images/icons/facebook-blue-rounded.svg";
 import google from "../../assets/images/icons/google.svg";
-import React from "react";
+import line from "../../assets/images/arrows-btn-etc/Line-21.svg";
 
 function UserLoginRegister() {
   const dispatcher = useDispatch();
@@ -27,14 +28,24 @@ function UserLoginRegister() {
       <Modal className="modal" show={openRegisterModal} onHide={handleClose}>
         <div className="loginRegister-form d-flex flex-column align-items-center">
           <div className="LR-heading d-flex justify-content-center w-100 gap-3">
-            <div className={`user-login w-100 d-flex justify-content-center py-2 ${isLoginForm ? "button-primary" : "neutral-gray-717171"}`} onClick={() => setIsLoginForm(true)}>
+            <div
+              className={`user-login w-100 d-flex justify-content-center py-2 ${
+                isLoginForm ? "button-primary" : "neutral-gray-717171"
+              }`}
+              onClick={() => setIsLoginForm(true)}
+            >
               Login
             </div>
-            <div className={`user-createAccount w-100 d-flex justify-content-center py-2 ${isLoginForm ? "neutral-gray-717171" : "button-primary"}`} onClick={() => setIsLoginForm(false)}>
+            <div
+              className={`user-createAccount w-100 d-flex justify-content-center py-2 ${
+                isLoginForm ? "neutral-gray-717171" : "button-primary"
+              }`}
+              onClick={() => setIsLoginForm(false)}
+            >
               Create Account
             </div>
           </div>
-          <div className="create-account">
+          <div className="create-account overflow-hidden">
             <div className="d-flex flex-column align-items-center">
               <div className="tech-heim-login">
                 {isLoginForm ? "Log in to Tech Heim" : "Create your account"}
@@ -66,12 +77,8 @@ function UserLoginRegister() {
                     className="mt-2 mb-3 w-100 neutral-gray-717171"
                   >
                     {" "}
-                    <input
-                      type="checkbox"
-                      name="terms-conditions"
-                      id=""
-                    />{" "}
-                    Keep me logged in
+                    <input type="checkbox" name="terms-conditions" id="" /> Keep
+                    me logged in
                   </label>
                 </>
               )}
@@ -83,14 +90,14 @@ function UserLoginRegister() {
                     name="user-fullName"
                     id=""
                     placeholder="Full Name"
-                    className="CA-inputs w-100 mt-4 py-2"
+                    className="CA-inputs w-100 mt-4 mb-3 py-2"
                   />
                   <input
                     type="email"
                     name="user-email"
                     id=""
                     placeholder="E-mail"
-                    className="CA-inputs w-100 mt-1 mb-3 py-2"
+                    className="CA-inputs w-100 mb-3 py-2"
                   />
                   <input
                     type="password"
@@ -104,13 +111,8 @@ function UserLoginRegister() {
                     className="mt-2 mb-3 w-100 neutral-gray-717171"
                   >
                     {" "}
-                    <input
-                      type="checkbox"
-                      name="terms-conditions"
-                      id=""
-                    />{" "}
-                    I agree to all{" "}
-                    <a href="/">Terms & Conditions</a>
+                    <input type="checkbox" name="terms-conditions" id="" /> I
+                    agree to all <a href="/">Terms & Conditions</a>
                   </label>
                 </>
               )}
@@ -118,7 +120,13 @@ function UserLoginRegister() {
               <button type="button" className="btn btn-primary w-100">
                 {isLoginForm ? "Log In" : "Create Account"}
               </button>
-              <div className="mt-4 mb-4">Or {isLoginForm ? "Log In" : "Sign Up"} with</div>
+              <div className=" logIn-signIn-with d-flex justify-content-center align-content-center">
+                <img src={line} alt="" />
+                <div className=" mt-4 mb-4">
+                  Or {isLoginForm ? "Log In" : "Sign Up"} with
+                </div>
+                <img src={line} alt="" />
+              </div>
               <div className="signUp-with w-100 d-flex gap-4 justify-content-between">
                 <div className="w-100 ">
                   <button
