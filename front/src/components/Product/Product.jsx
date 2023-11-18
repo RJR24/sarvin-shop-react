@@ -30,7 +30,7 @@ const Product = () => {
   };
   return (
     <div className=" row p-container">
-      <div className="col-5 product-div">
+      <div className=" col-md-6 col-lg-5 product-div">
         <div className="product-image">
           <img
             src={PRODUCTS[5].productImage}
@@ -53,7 +53,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div className="col-4 specifications">
+      <div className=" col-md-6 col-lg-4 specifications">
         <div className="sTop d-flex justify-content-start flex-column gap-2">
           <div className="pro-name">
             {PRODUCTS[3].productName} MNEJ3 2022 LLA {<br />} 13.3 inch
@@ -117,7 +117,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div className="price col-3 d-flex flex-column">
+      <div className="price d-md-none d-lg-block col-lg-3 d-flex flex-column">
         <div className="price-payment">
           <div className=" payment-container d-flex flex-column ">
             <div className="price-discount">
