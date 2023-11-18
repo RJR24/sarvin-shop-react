@@ -19,6 +19,9 @@
 .model-name {
   font-weight: 500;
 }
+.proceed-to-checkout {
+  position: sticky;
+}
 /* .basket-main-container {
   max-width: 34.5rem;
   max-height: 43.5rem;
