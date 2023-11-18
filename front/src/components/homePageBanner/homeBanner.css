@@ -1,7 +1,16 @@
-/* @media ( width < 657 ){
-.ps5 img{
-  width: 23rem;
-  height: 11rem;
+.iphone15 img,
+.ps5 img {
+  width: 100%;
 }
-} */
-  
+.iphone15,
+.ps5 {
+  padding: 0;
+}
+.iphone15 img {
+  max-width: 97.1%;
+}
+@media only screen and (max-width: 767px) {
+  .iphone15 img {
+    max-width: 100%;
+  }
+}
