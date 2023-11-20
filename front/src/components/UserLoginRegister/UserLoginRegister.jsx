@@ -1,8 +1,11 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
-import { setRegisterModal } from "../../redux/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+
+import { setRegisterModal } from "../../redux/slices/userSlice";
 import "./userLoginRegister.css";
+
 import facebook from "../../assets/images/icons/facebook-blue-rounded.svg";
 import google from "../../assets/images/icons/google.svg";
 import line from "../../assets/images/arrows-btn-etc/Line-21.svg";
@@ -12,6 +15,23 @@ function UserLoginRegister() {
   const openRegisterModal = useSelector(
     (state) => state.userReducer.openRegisterModal
   );
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5500/signUp",
+        formData
+      );
+      console.log(response.data);
+      handleClose();
+    } catch (error) {
+      console.log("Error submitting form:", error);
+    }
+  };
 
   const handleClose = () => {
     dispatcher(setRegisterModal());
@@ -29,7 +49,7 @@ function UserLoginRegister() {
         <div className="loginRegister-form d-flex flex-column align-items-center">
           <div className="LR-heading d-flex justify-content-center w-100 gap-3">
             <div
-              className={`user-login w-100 d-flex justify-content-center py-2 ${
+              className={`user-login w-100 d-flex justify-content-center  py-2 ${
                 isLoginForm ? "button-primary" : "neutral-gray-717171"
               }`}
               onClick={() => setIsLoginForm(true)}
@@ -45,7 +65,7 @@ function UserLoginRegister() {
               Create Account
             </div>
           </div>
-          <div className="create-account overflow-hidden">
+          <form className="create-account overflow-hidden onSubmit={handleSubmit}">
             <div className="d-flex flex-column align-items-center">
               <div className="tech-heim-login">
                 {isLoginForm ? "Log in to Tech Heim" : "Create your account"}
@@ -117,7 +137,7 @@ function UserLoginRegister() {
                 </>
               )}
 
-              <button type="button" className="btn btn-primary w-100">
+              <button type="submit" className="btn btn-primary w-100">
                 {isLoginForm ? "Log In" : "Create Account"}
               </button>
               <div className=" logIn-signIn-with d-flex justify-content-center align-content-center">
@@ -165,7 +185,7 @@ function UserLoginRegister() {
                 </span>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </Modal>
     </>
