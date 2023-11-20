@@ -7,7 +7,7 @@ const categoryRouter = require("./routes/categoryRouter");
 const userRouter = require("./routes/userRouter");
 
 const app = express();
-app.use(corse());
+app.use(cors());
 
 require("dotenv").config();
 
