@@ -65,7 +65,10 @@ function UserLoginRegister() {
               Create Account
             </div>
           </div>
-          <form className="create-account overflow-hidden onSubmit={handleSubmit}">
+          <form
+            className="create-account overflow-hidden "
+            onSubmit={handleSubmit}
+          >
             <div className="d-flex flex-column align-items-center">
               <div className="tech-heim-login">
                 {isLoginForm ? "Log in to Tech Heim" : "Create your account"}
