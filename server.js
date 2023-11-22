@@ -7,7 +7,12 @@ const categoryRouter = require("./routes/categoryRouter");
 const userRouter = require("./routes/userRouter");
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost;3000",
+    methods: [GET, POST, PUT, DELETE],
+  })
+);
 
 require("dotenv").config();
 
