@@ -4,10 +4,15 @@ const bcrypt = require("bcrypt");
 // const tokenBlacklist = require("./tokenBlackList");
 const TokenBlackList = require("../models/tokenBlackList");
 
-
 const signUp = async (req, res) => {
   try {
+    console.log("body:", req.body);
     const { email, password, fullName } = req.body;
+    if (!email || !fullName || !password) {
+      return res
+        .status(400)
+        .send("Please provide email, password, and fullName");
+    }
     const existingUser = await User.findOne({ where: { email } });
     if (existingUser) {
       return res.status(400).send("user with the given email already exist!");
@@ -21,6 +26,7 @@ const signUp = async (req, res) => {
 
     return res.status(201).send(newUser);
   } catch (error) {
+    console.error("Error during sign-up:", error);
     return res.status(500).send("internal server error!" + error);
   }
 };
@@ -38,7 +44,7 @@ const login = async (req, res) => {
         expiresIn: "1h",
       }
     );
-    return res.status(200).send("user logged in successfully!" + token);
+    return res.status(200).send(token);
   } catch (error) {
     return res.status(500).send("internal server error!" + error);
   }
@@ -51,7 +57,7 @@ const logout = async (req, res) => {
   }
 
   // Add the token to the blacklist
-  await TokenBlackList.create({token});
+  await TokenBlackList.create({ token });
 
   return res.status(200).send("user logged out successfully!");
 };
