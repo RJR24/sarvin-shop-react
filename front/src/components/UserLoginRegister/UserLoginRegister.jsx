@@ -23,7 +23,7 @@ function UserLoginRegister() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/signUp",
+        "http://localhost:5500/signUp",
         formData
       );
       console.log(response.data);
