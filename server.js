@@ -1,10 +1,19 @@
 const express = require("express");
+const cors = require("cors");
+
 const productRouter = require("./routes/productRouter");
 const authRouter = require("./routes/authRouter");
 const categoryRouter = require("./routes/categoryRouter");
 const userRouter = require("./routes/userRouter");
 
 const app = express();
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
+
 require("dotenv").config();
 
 app.use(express.json());
