@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -15,12 +15,12 @@ function UserLoginRegister() {
   const openRegisterModal = useSelector(
     (state) => state.userReducer.openRegisterModal
   );
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(event.target);
-
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
+  const handleRegistration = async () => {
     try {
       const response = await axios.post(
         "http://localhost:5500/signUp",
@@ -29,7 +29,29 @@ function UserLoginRegister() {
       console.log(response.data);
       handleClose();
     } catch (error) {
-      console.log("Error submitting form:", error);
+      console.log("Error submitting registration form:", error);
+    }
+  };
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5500/login",
+        formData
+      );
+      console.log(response.data);
+      handleClose();
+    } catch (error) {
+      console.log("Error submitting login form:", error);
+    }
+  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (isLoginForm) {
+      handleLogin();
+    } else {
+      handleRegistration();
     }
   };
 
@@ -42,7 +64,13 @@ function UserLoginRegister() {
   const switchForm = () => {
     setIsLoginForm(!isLoginForm);
   };
-
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
   return (
     <>
       <Modal className="modal" show={openRegisterModal} onHide={handleClose}>
@@ -78,17 +106,19 @@ function UserLoginRegister() {
                 <>
                   <input
                     type="email"
-                    name="user-email"
-                    id=""
+                    name="email"
                     placeholder="E-mail"
                     className="CA-inputs w-100 mt-3 mb-3 py-2"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                   <input
                     type="password"
-                    name="user-password"
-                    id=""
+                    name="password"
                     placeholder="Password"
                     className="CA-inputs w-100 py-2"
+                    value={formData.password}
+                    onChange={handleChange}
                   />
                   <div className="w-100 d-flex justify-content-end me-5 mt-2">
                     <a href="/" className="forgot-password fw-lighter">
@@ -100,8 +130,8 @@ function UserLoginRegister() {
                     className="mt-2 mb-3 w-100 neutral-gray-717171"
                   >
                     {" "}
-                    <input type="checkbox" name="terms-conditions" id="" /> Keep
-                    me logged in
+                    <input type="checkbox" name="terms-conditions" /> Keep me
+                    logged in
                   </label>
                 </>
               )}
@@ -110,32 +140,35 @@ function UserLoginRegister() {
                 <>
                   <input
                     type="text"
-                    name="user-fullName"
-                    id=""
+                    name="fullName"
                     placeholder="Full Name"
                     className="CA-inputs w-100 mt-4 mb-3 py-2"
+                    value={formData.fullName}
+                    onChange={handleChange}
                   />
                   <input
                     type="email"
-                    name="user-email"
-                    id=""
+                    name="email"
                     placeholder="E-mail"
                     className="CA-inputs w-100 mb-3 py-2"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                   <input
                     type="password"
-                    name="user-password"
-                    id=""
+                    name="password"
                     placeholder="Password"
                     className="CA-inputs w-100 py-2"
+                    value={formData.password}
+                    onChange={handleChange}
                   />
                   <label
                     htmlFor=""
                     className="mt-2 mb-3 w-100 neutral-gray-717171"
                   >
                     {" "}
-                    <input type="checkbox" name="terms-conditions" id="" /> I
-                    agree to all <a href="/">Terms & Conditions</a>
+                    <input type="checkbox" name="terms-conditions" /> I agree to
+                    all <a href="/">Terms & Conditions</a>
                   </label>
                 </>
               )}
