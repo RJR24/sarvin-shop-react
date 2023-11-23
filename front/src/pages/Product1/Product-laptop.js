@@ -1,4 +1,5 @@
 import React from "react";
+import "./product1.css";
 
 import Product from "../../components/Product/Product";
 
@@ -6,12 +7,6 @@ const Product1 = () => {
   return (
     <div className="container">
       <Product />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   );
 };

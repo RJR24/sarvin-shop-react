@@ -32,16 +32,11 @@ import axios from "axios";
 
 const NewProducts = () => {
   const [newProductsList, setNewProductsList] = useState([])
-  // const [test, setTest] = useState(true)
- 
- 
-  // useEffect(() => {
-  // console.log("Mounting & updating");
-  // })
 
   useEffect(() => {
      axios
-    .get("https://fakestoreapi.com/products?limit=4")
+    // .get("https://fakestoreapi.com/products?limit=4")
+    .get("http://localhost:5500/products")
     .then((res) => {
       setNewProductsList(res.data);
       // console.log(newProductsList);

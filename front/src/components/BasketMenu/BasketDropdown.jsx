@@ -11,12 +11,14 @@ const BasketDropdown = () => {
   console.log(basket);
   return (
     <>
-      <div className="itemsNumber">{totalQty} items</div>
-      <div className="cartItems d-flex justify-content-center">
-        <div className="items-container align-items-center">
-          {basket.map((item) => (
-            <BasketItemsCard {...item} key={item.id} />
-          ))}
+      <div className=" basket-main-container">
+        <div className="itemsNumber">{totalQty} items</div>
+        <div className="cartItems d-flex justify-content-center">
+          <div className="items-container align-items-center">
+            {basket.map((item) => (
+              <BasketItemsCard {...item} key={item.id} />
+            ))}
+          </div>
         </div>
       </div>
       <div className="proceed-to-checkout d-flex align-items-center">

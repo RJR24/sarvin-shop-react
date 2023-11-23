@@ -8,14 +8,14 @@ const userSlice = createSlice({
     username: "",
   },
   reducers: {
-    setRegisterModal: (state, action) => {
-      state.openRegisterModal = true;
+    setRegisterModal: (state) => {
+      state.openRegisterModal = !state.openRegisterModal;
     },
     login: (state, action) => {
       state.isLogin = true;
       state.username = action.payload.username;
     },
-    logout: (state, action) => {
+    logout: (state) => {
       state.isLogin = false;
       state.username = "";
     },
