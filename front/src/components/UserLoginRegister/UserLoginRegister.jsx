@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 import { login, setRegisterModal } from "../../redux/slices/userSlice";
 import "./userLoginRegister.css";
@@ -11,7 +12,8 @@ import google from "../../assets/images/icons/google.svg";
 import line from "../../assets/images/arrows-btn-etc/Line-21.svg";
 
 function UserLoginRegister() {
-  axios.defaults.baseURL = 'http://localhost:5500';
+
+  axios.defaults.baseURL = "http://localhost:5500";
   const dispatcher = useDispatch();
   const openRegisterModal = useSelector(
     (state) => state.userReducer.openRegisterModal
@@ -23,13 +25,23 @@ function UserLoginRegister() {
   });
   const handleRegistration = async () => {
     try {
-      const response = await axios.post(
-        "/signUp",
-        formData
-      );
+
+      const response = await axios.post("/signUp", formData);
       console.log(response.data);
       handleClose();
+      Swal.fire({
+        title: 'Well done',
+        text: 'Congratulation your account has been successfully created.',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
     } catch (error) {
+      Swal.fire({
+        title: 'Oops.',
+        text: 'Unfortunately, there was a problem during creating your account. try again later.',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
       console.log("Error submitting registration form:", error);
     }
   };
@@ -37,17 +49,28 @@ function UserLoginRegister() {
   const handleLogin = async () => {
 
     try {
-      const response = await axios.post(
-        "/login",
-        formData
-      );
+      const response = await axios.post("/login", formData);
       console.log(response.data);
       dispatcher(login({ username: response.data.username })); // Assuming your response contains the username
       handleClose();
+      Swal.fire({
+        title: 'Well done',
+        text: 'You logged in  successfully.',
+        icon: 'success',
+        showConfirmButton: false
+      })
     } catch (error) {
       console.log("Error submitting login form:", error);
+      Swal.fire({
+        title: 'Oops.',
+        text: 'Email or password is not correct!',
+        icon: 'error',
+        showConfirmButton: false
+      })
     }
   };
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
