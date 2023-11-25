@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import Swal from "sweetalert2";
 
-import { setRegisterModal } from "../../redux/slices/userSlice";
+import { login, setRegisterModal } from "../../redux/slices/userSlice";
 import "./userLoginRegister.css";
 
 import facebook from "../../assets/images/icons/facebook-blue-rounded.svg";
@@ -11,25 +12,69 @@ import google from "../../assets/images/icons/google.svg";
 import line from "../../assets/images/arrows-btn-etc/Line-21.svg";
 
 function UserLoginRegister() {
+  axios.defaults.baseURL = "http://localhost:5500";
   const dispatcher = useDispatch();
   const openRegisterModal = useSelector(
     (state) => state.userReducer.openRegisterModal
   );
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
+  const handleRegistration = async () => {
+    try {
+      const response = await axios.post("/signUp", formData);
+      console.log(response.data);
+      handleClose();
+      Swal.fire({
+        title: 'Well done',
+        text: 'Congratulation your account has been successfully created.',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
+    } catch (error) {
+      Swal.fire({
+        title: 'Oops.',
+        text: 'Unfortunately, there was a problem during creating your account. try again later.',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
+      console.log("Error submitting registration form:", error);
+    }
+  };
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post("/login", formData);
+      console.log(response.data);
+      dispatcher(login({ username: response.data.username })); // Assuming your response contains the username
+     
+      handleClose();
+      Swal.fire({
+        title: 'Well done',
+        text: 'You logged in  successfully.',
+        icon: 'success',
+        showConfirmButton: false
+      })
+    } catch (error) {
+      console.log("Error submitting login form:", error);
+      Swal.fire({
+        title: 'Oops.',
+        text: 'Email or password is not correct!',
+        icon: 'error',
+        showConfirmButton: false
+      })
+    }
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
-
-    try {
-      const response = await axios.post(
-        "http://localhost:5500/signUp",
-        formData
-      );
-      console.log(response.data);
-      handleClose();
-    } catch (error) {
-      console.log("Error submitting form:", error);
+    if (isLoginForm) {
+      handleLogin();
+    } else {
+      handleRegistration();
     }
   };
 
@@ -42,7 +87,13 @@ function UserLoginRegister() {
   const switchForm = () => {
     setIsLoginForm(!isLoginForm);
   };
-
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
   return (
     <>
       <Modal className="modal" show={openRegisterModal} onHide={handleClose}>
@@ -78,17 +129,19 @@ function UserLoginRegister() {
                 <>
                   <input
                     type="email"
-                    name="user-email"
-                    id=""
+                    name="email"
                     placeholder="E-mail"
                     className="CA-inputs w-100 mt-3 mb-3 py-2"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                   <input
                     type="password"
-                    name="user-password"
-                    id=""
+                    name="password"
                     placeholder="Password"
                     className="CA-inputs w-100 py-2"
+                    value={formData.password}
+                    onChange={handleChange}
                   />
                   <div className="w-100 d-flex justify-content-end me-5 mt-2">
                     <a href="/" className="forgot-password fw-lighter">
@@ -100,8 +153,8 @@ function UserLoginRegister() {
                     className="mt-2 mb-3 w-100 neutral-gray-717171"
                   >
                     {" "}
-                    <input type="checkbox" name="terms-conditions" id="" /> Keep
-                    me logged in
+                    <input type="checkbox" name="terms-conditions" /> Keep me
+                    logged in
                   </label>
                 </>
               )}
@@ -110,32 +163,35 @@ function UserLoginRegister() {
                 <>
                   <input
                     type="text"
-                    name="user-fullName"
-                    id=""
+                    name="fullName"
                     placeholder="Full Name"
                     className="CA-inputs w-100 mt-4 mb-3 py-2"
+                    value={formData.fullName}
+                    onChange={handleChange}
                   />
                   <input
                     type="email"
-                    name="user-email"
-                    id=""
+                    name="email"
                     placeholder="E-mail"
                     className="CA-inputs w-100 mb-3 py-2"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                   <input
                     type="password"
-                    name="user-password"
-                    id=""
+                    name="password"
                     placeholder="Password"
                     className="CA-inputs w-100 py-2"
+                    value={formData.password}
+                    onChange={handleChange}
                   />
                   <label
                     htmlFor=""
                     className="mt-2 mb-3 w-100 neutral-gray-717171"
                   >
                     {" "}
-                    <input type="checkbox" name="terms-conditions" id="" /> I
-                    agree to all <a href="/">Terms & Conditions</a>
+                    <input type="checkbox" name="terms-conditions" /> I agree to
+                    all <a href="/">Terms & Conditions</a>
                   </label>
                 </>
               )}
