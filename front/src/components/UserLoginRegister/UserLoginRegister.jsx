@@ -12,6 +12,7 @@ import google from "../../assets/images/icons/google.svg";
 import line from "../../assets/images/arrows-btn-etc/Line-21.svg";
 
 function UserLoginRegister() {
+
   axios.defaults.baseURL = "http://localhost:5500";
   const dispatcher = useDispatch();
   const openRegisterModal = useSelector(
@@ -24,6 +25,7 @@ function UserLoginRegister() {
   });
   const handleRegistration = async () => {
     try {
+
       const response = await axios.post("/signUp", formData);
       console.log(response.data);
       handleClose();
@@ -45,11 +47,11 @@ function UserLoginRegister() {
   };
 
   const handleLogin = async () => {
+
     try {
       const response = await axios.post("/login", formData);
       console.log(response.data);
       dispatcher(login({ username: response.data.username })); // Assuming your response contains the username
-     
       handleClose();
       Swal.fire({
         title: 'Well done',
@@ -67,6 +69,7 @@ function UserLoginRegister() {
       })
     }
   };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();

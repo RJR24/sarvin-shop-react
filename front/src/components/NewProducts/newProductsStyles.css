@@ -4,7 +4,6 @@
 
   padding: 1rem;
   min-width: 10rem;
-  /* height: 22.5rem; */
   box-shadow: -2px 2px 15px -1px rgba(113, 113, 113, 0.12);
 }
 .newProductCard :hover {
@@ -52,7 +51,4 @@
 .price-rate img {
   width: 20px;
 }
-#rate {
-  display: flex;
-  align-items: center;
-}
+

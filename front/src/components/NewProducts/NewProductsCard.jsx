@@ -15,12 +15,12 @@ const NewProductsCard = ({ image, title, price, rating }) => {
         <div>{title}</div>
 
         <div className="nPPrice-rate">
-          <div>{price}</div>
-          <div id="rate-sign">
+          <div>${price}</div>
+          <div id="rate-sign d-flex ">
             <div>
               <img src={star} alt="star sign" />
             </div>
-            {rating.rate}
+            {rating}
           </div>
         </div>
       </div>
