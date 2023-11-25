@@ -16,8 +16,10 @@ const userSlice = createSlice({
       state.username = action.payload.username;
     },
     logout: (state) => {
+      console.log("Logout reducer is called!");
       state.isLogin = false;
       state.username = "";
+      state.openRegisterModal = false;
     },
   },
 });

@@ -28,9 +28,10 @@ const UserAccountDropdown = () => {
   // const userLogin = () => {
   //   dispatcher(login({ username: "Kaveh024" }));
   // };
-  const userLogout = () => {
-    dispatcher(logout());
-  };
+  // const userLogout = () => {
+  //   console.log("user is logging out!");
+  //   dispatcher(logout());
+  // };
   const handleIconClick = () => {
     if (isLogin) {
       setOpen(!open);
@@ -55,20 +56,20 @@ const UserAccountDropdown = () => {
         {isLogin && open && (
           <div className="dropdown-menu">
             <div>
-              <h3>
+              {/* <h3>
                 {username}
                 <br />
                 <span>{username}@gmail.com</span>
-              </h3>
+              </h3> */}
               <ul className="list-unstyled">
-                <DropdownItem img={profile} text={"My Profile"} />
+                <DropdownItem img={profile} text={"fullName"} />
                 <DropdownItem img={orders} text={"Orders"} />
                 <DropdownItem img={wishList} text={"Wish List"} />
                 <DropdownItem img={payments} text={"Payments"} />
                 <DropdownItem
+                  event={true}
                   img={logoutIcon}
                   text={"Log Out"}
-                  onClick={userLogout}
                 />
               </ul>
             </div>
@@ -100,5 +101,23 @@ function DropdownItem(props) {
     </>
   );
 }
+// function DropdownItem(props) {
+//   const dispatcher = useDispatch();
+
+//   const handleItemClick = () => {
+//     console.log(`Item clicked: ${props.text}`);
+
+//     if (props.event) {
+//       dispatcher(logout());
+//     }
+//   };
+
+//   return (
+//     <li className="dropdownItem" onClick={handleItemClick}>
+//       <img src={props.img} alt="" />
+//       <a href="#">{props.text}</a>
+//     </li>
+//   );
+// }
 
 export default UserAccountDropdown;

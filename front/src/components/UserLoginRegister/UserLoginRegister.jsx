@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
-import { setRegisterModal } from "../../redux/slices/userSlice";
+import { login, setRegisterModal } from "../../redux/slices/userSlice";
 import "./userLoginRegister.css";
 
 import facebook from "../../assets/images/icons/facebook-blue-rounded.svg";
@@ -11,6 +11,7 @@ import google from "../../assets/images/icons/google.svg";
 import line from "../../assets/images/arrows-btn-etc/Line-21.svg";
 
 function UserLoginRegister() {
+  axios.defaults.baseURL = 'http://localhost:5500';
   const dispatcher = useDispatch();
   const openRegisterModal = useSelector(
     (state) => state.userReducer.openRegisterModal
@@ -23,7 +24,7 @@ function UserLoginRegister() {
   const handleRegistration = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5500/signUp",
+        "/signUp",
         formData
       );
       console.log(response.data);
@@ -34,12 +35,14 @@ function UserLoginRegister() {
   };
 
   const handleLogin = async () => {
+
     try {
       const response = await axios.post(
-        "http://localhost:5500/login",
+        "/login",
         formData
       );
       console.log(response.data);
+      dispatcher(login({ username: response.data.username })); // Assuming your response contains the username
       handleClose();
     } catch (error) {
       console.log("Error submitting login form:", error);

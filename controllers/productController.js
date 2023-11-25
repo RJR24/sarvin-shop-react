@@ -36,7 +36,7 @@ const updateProduct = async (req, res) => {
       req.body;
     const product = await Product.findByPk(productId);
     if (!product) {
-      return res.status(404).send("user not found!");
+      return res.status(404).send("product not found!");
     }
 
     (product.title = title),

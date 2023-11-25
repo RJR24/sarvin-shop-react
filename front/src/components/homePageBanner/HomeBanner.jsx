@@ -9,7 +9,7 @@ import iphone15Mobile from "../../assets/images/banners/iphone15-mobile.svg";
 
 const HomeBanner = () => {
   return (
-    <div className=" row d-flex justify-content-center gap-2">
+    <div className=" row d-flex justify-content-center gap-2 mt-5 mb-5">
       <div className="iphone15 col-md-7  ">
         <picture>
           <source
