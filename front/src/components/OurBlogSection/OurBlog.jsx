@@ -54,7 +54,7 @@ const NewBlogs = () => {
             />
           )}
         </div>
-        <div className="col-12 col-md-8">
+        <div className="col-12 col-md-8 d-flex flex-column gap-3">
           {OurBlogList.blog2 && (
             <OurBlogCard
               data={OurBlogList.blog2.data}
