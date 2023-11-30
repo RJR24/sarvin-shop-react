@@ -33,14 +33,15 @@ function UserLoginRegister() {
         title: 'Well done',
         text: 'Congratulation your account has been successfully created.',
         icon: 'success',
-        confirmButtonText: 'Cool'
+        showConfirmButton: false
       })
     } catch (error) {
       Swal.fire({
         title: 'Oops.',
         text: 'Unfortunately, there was a problem during creating your account. try again later.',
+        // text: error.response.data.message,
         icon: 'error',
-        confirmButtonText: 'Cool'
+        showConfirmButton: false
       })
       console.log("Error submitting registration form:", error);
     }
