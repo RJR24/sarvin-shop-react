@@ -23,6 +23,9 @@ import guaranteed from "../../assets/images/icons/guaranteed.svg";
 import delivery from "../../assets/images/icons/delivery.svg";
 import shop from "../../assets/images/icons/shop.svg";
 
+import selectColorGrey from "../../assets/images/arrows-btn-etc/select-color-grey.svg";
+import tickCircle from "../../assets/images/arrows-btn-etc/tick-circle.svg";
+
 const Product = () => {
   const dispatcher = useDispatch();
   const addToCart = () => {
@@ -59,52 +62,55 @@ const Product = () => {
             {PRODUCTS[3].productName} MNEJ3 2022 LLA {<br />} 13.3 inch
           </div>
           <div className="rate-color d-flex justify-content-start flex-column gap-4">
-            <div>
-              <div className="d-flex align-items-center gap-4 ">
-                <span className="p-rate d-flex align-items-center ">
+              <div className="rate-sold d-flex align-items-center">
+                <div className="p-rate d-flex align-items-center">
                   {" "}
                   <img src={star} alt="star" /> 4.9
-                </span>
-                <span className=" fs-5  ">sold 125</span>
+                </div>
+                <div className="separator"></div>
+                <div className="sold-number">sold 125</div>
               </div>
-            </div>
-            <div className="row d-flex align-items-center g-4">
-              <span className=" col d-flex align-items-center justify-content-center ">
+            <div className="tech-heim-services d-flex">
+              <span className="services-item gap-1 d-flex align-items-center justify-content-start">
                 <img src={shop} alt="" /> In Stock
               </span>
-              <span className=" col d-flex align-items-center justify-content-center ">
+              <span className="services-item gap-1 d-flex align-items-center justify-content-center ">
                 <img src={guaranteed} alt="" /> Guaranteed
               </span>
-              <span className=" col d-flex align-items-center justify-content-center ">
+              <span className="services-item gap-1 d-flex align-items-center justify-content-center ">
                 <img src={delivery} alt="" /> Free Delivery
               </span>
             </div>
-            <div>
+            <div className="select-color d-flex">
               <span>Select color</span>
+              <div className=" d-flex gap-2">
+                <img src={selectColorGrey} alt="select Color Grey" />
+                <img src={tickCircle} alt="tick" className="tickCircle" />
+              </div>
             </div>
           </div>
         </div>
         <div className="product-info">
           <div className=" d-flex flex-column justify-content-between ">
             <div className="d-flex">
-              <span className=" col-6">Brand</span>
-              <span className=" col-4">Apple</span>
+              <span className=" col-5 mt-2 mb-2">Brand</span>
+              <span className=" col-3">Apple</span>
             </div>
             <div className="d-flex">
-              <span className=" col-6">Model Name </span>
-              <span className=" col-4">MacBook Pro</span>
+              <span className=" col-5 mt-2 mb-2">Model Name </span>
+              <span className=" col-3">MacBook Pro</span>
             </div>
             <div className="d-flex">
-              <span className=" col-6">Screen Size</span>
-              <span className=" col-4">13.3 Inches</span>
+              <span className=" col-5 mt-2 mb-2">Screen Size</span>
+              <span className=" col-3">13.3 Inches</span>
             </div>
             <div className="d-flex">
-              <span className=" col-6">Storage Size</span>
-              <span className=" col-4">256 GB</span>
+              <span className=" col-5 mt-2 mb-2">Storage Size</span>
+              <span className=" col-3">256 GB</span>
             </div>
             <div className="d-flex">
-              <span className=" col-6">CPU Model</span>
-              <span className=" col-4">Core i5</span>
+              <span className=" col-5 mt-2 mb-2">CPU Model</span>
+              <span className=" col-3">Core i5</span>
             </div>
             <div style={{ color: "#0C68F4" }}>
               show more{" "}
