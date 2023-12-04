@@ -27,7 +27,7 @@ export const PRODUCTS = [
   },
   {
     id: 4,
-    productName: "Pc",
+    productName: "MacBook Pro M2 MNEJ3 2022 LLA 13.3 inch",
     price: 2000,
     productImage: Pc,
   },
